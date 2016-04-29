@@ -8,7 +8,11 @@ test -f ~/.bashrc && mv ~/.bashrc ~/.bashrc_initial
 cp .bashrc ~/.bashrc
 cp -r --parents .vim ~/
 cp -r --parents .dircolors ~/
-cp -r --parents .config/xfce4/terminal/terminalrc ~/
+if [ $COLORTERM == "xfce4-terminal" ]; then
+    cp -r --parents .config/xfce4/terminal/terminalrc ~/
+elif [ $COLORTERM == "gnome-terminal" ]; then
+    ./gnomesolarized.sh
+fi
 
 cd ~/.vim/vimconfig/
 ./install.sh
