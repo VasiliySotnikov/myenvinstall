@@ -8,9 +8,9 @@ test -f ~/.bashrc && mv ~/.bashrc ~/.bashrc_initial
 cp .bashrc ~/.bashrc
 cp -r --parents .vim ~/
 cp -r --parents .dircolors ~/
-if [ $COLORTERM == "xfce4-terminal" ]; then
+f [[ $(ps -h -o comm -p $PPID) == xfce4* ]]; then
     cp -r --parents .config/xfce4/terminal/terminalrc ~/
-elif [ $COLORTERM == "gnome-terminal" ]; then
+elif [ $(ps -h -o comm -p $PPID) == gnome* ]; then
     ./gnomesolarized.sh
 fi
 
