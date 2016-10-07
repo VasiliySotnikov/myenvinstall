@@ -15,4 +15,4 @@ elif [ $(ps -h -o comm -p $PPID) == gnome* ]; then
 fi
 
 cd ~/.vim/vimconfig/
-./install.sh
+./vimconfig.sh

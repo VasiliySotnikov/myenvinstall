@@ -33,9 +33,9 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
-#if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    #debian_chroot=$(cat /etc/debian_chroot)
-#fi
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -47,23 +47,23 @@ esac
 # should be on the output of commands, not on the prompt
 #force_color_prompt=yes
 
-#if [ -n "$force_color_prompt" ]; then
-    #if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	## We have color support; assume it's compliant with Ecma-48
-	## (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	## a case would tend to support setf rather than setaf.)
-	#color_prompt=yes
-    #else
-	#color_prompt=
-    #fi
-#fi
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
 
-#if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-#else
-    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-#fi
-#unset color_prompt force_color_prompt
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -86,13 +86,13 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# set ls color scheme
-eval "`dircolors -b $HOME/.dircolors/dircolors.ansi-dark`"
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# quickly open with the default program
+alias op='xdg-open > /dev/null 2>&1'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -126,28 +126,27 @@ export LD_LIBRARY_PATH="$HOME/local/lib":$LD_LIBRARY_PATH
 # ******************************************
 # This is quick build commands for BH
 # ******************************************
-#reconfigbh() {
-    #cd "$HOME/blackhat/$(pwd | sed "s/.*blackhat\/\([^\/]*\)\/*.*/\1/")"; 
-    #autoreconf -fi
-    #(cd build/; ../configure --prefix=$PWD --with-QDpath=$HOME/local/ --enable-public=no --enable-readline=no --enable-BHdebug=yes && make -j12 && make install)
-    #cd - >/dev/null
-#}
+reconfigbh() {
+    cd "$HOME/blackhat/$(pwd | sed "s/.*blackhat\/\([^\/]*\)\/*.*/\1/")"; 
+    autoreconf -fi
+    (cd build/; ../configure --prefix=$PWD --with-QDpath=$HOME/local/ --enable-public=no --enable-readline=no --enable-BHdebug=yes && make -j && make install)
+    cd - >/dev/null
+}
 
-#buildandmaketest(){
-    #if [ "$(hostname)" == "london" ]; then
-        #echo "make -j5"
-        #(cd ../; make -j5 >/dev/null && make install >/dev/null) && maketest "$1"
-    #else 
-        #echo "make -j12" 
-        #(cd ../; make -j12 >/dev/null && make install >/dev/null) && maketest "$1"
-    #fi
-#}
+buildandmaketest(){
+    if [ "$(hostname)" == "london" ]; then
+        echo "make -j5"
+        (cd ../; make -j5 >/dev/null && make install >/dev/null) && maketest "$1"
+    else 
+        echo "make -j" 
+        (cd ../; make -j >/dev/null && make install >/dev/null) && maketest "$1"
+    fi
+}
 
-#maketest(){
-    #make ""$1".exe" >/dev/null && ./"$1" 
-#}
+maketest(){
+    make ""$1".exe" >/dev/null && ./"$1" 
+}
 
-#alias cdb='cd ~/blackhat/BHlib_Top/'
 
 #******************************************
 # This is to save ssh passphrase
@@ -177,9 +176,12 @@ svnpass(){
 }
 #******************************************
 
+alias cdb='cd ~/blackhat/BHlib_Top/'
 
 # ******************************************
 
 # This makes all terminals write commands in history immediately
 export PROMPT_COMMAND='history -a'
 
+# set ls color scheme
+eval "`dircolors -b $HOME/.dircolors/dircolors.ansi-dark`"

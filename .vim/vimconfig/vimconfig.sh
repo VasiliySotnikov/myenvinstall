@@ -7,6 +7,11 @@ ln -s ~/.vim/.vimrc ~/.vimrc
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 #git clone https://github.com/rdnetto/YCM-Generator.git ~/.vim/bundle/
 vim +PluginInstall +qall
+#setup vim-latex
+cd ~/.vim
+tar xf vim-latex-1.9.0.tar.gz
+mv -f -t ./ ~/.vim/vim-latex-1.9.0/*
+rm -rf vim-latex-1.9.0
 #cd ~/.vim/bundle/YouCompleteMe
 #./install.py --clang-completer
 

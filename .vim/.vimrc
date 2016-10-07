@@ -11,7 +11,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'tpope/vim-surround'
 Plugin 'jlanzarotta/bufexplorer'
@@ -20,11 +20,14 @@ Plugin 'jacquesbh/vim-showmarks'
 Plugin 'grep.vim'
 call vundle#end()
 
+"this is a fix for the bug with highlighting in c preprocessor macros
+hi link cCppOut2 PreProc
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_extra_conf_globlist = ['~/*']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:tex_flavor='latex'
 
 if has("gui_running")
     set background=light
@@ -103,9 +106,11 @@ vnoremap ;; <Esc>
 nnoremap <C-J> mpo<Esc>`p
 nnoremap <C-K> mpO<Esc>`p
 inoremap {<CR> {<CR>}<c-o>O
-nnoremap <F4> /<c-r>=expand("<cword>")<CR><CR>N:Grep -r <cword> *<CR> <c-w>T
-nnoremap <F5> :Grep -r<CR>
+nnoremap <F4> /<c-r>=expand("<cword>")<CR><CR>N:Grep -r --exclude="*Darren*worker*" --exclude="cut_part_worker*" --exclude="tags" <cword> *<CR> <c-w>T
+nnoremap <F5> :Grep -r --exclude="*Darren*worker*" --exclude="cut_part_worker*" --exclude="tags"<CR>
+nnoremap <F6> :w<CR>:make -j5 \| cwindow 20<CR>
 
-if v:version > 703 
-    set shortmess+=c
-endif
+set shortmess+=c
+
+set guioptions-=e
+set sessionoptions+=tabpages,globals
