@@ -12,6 +12,7 @@ cd ~/.vim
 tar xf vim-latex-1.9.0.tar.gz
 mv -f -t ./ ~/.vim/vim-latex-1.9.0/*
 rm -rf vim-latex-1.9.0
+rm vim-latex-1.9.0.tar.gz
 #cd ~/.vim/bundle/YouCompleteMe
 #./install.py --clang-completer
 
