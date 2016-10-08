@@ -3,7 +3,7 @@ VIMDIR=$(HOME)/.vim
 BACKUPDIR=$(HOME)/.vim_old
 
 
-all:  distclean install vimconfig
+all:  install vimconfig
 
 
 collect:
@@ -18,17 +18,17 @@ install:
 	cp -r --parents .vim $(HOME)/
 	cp -r --parents .dircolors $(HOME)/
 	cp -r --parents .config/xfce4/terminal/terminalrc $(HOME)/
-	ln -s $(VIMDIR)/.vimrc $(HOME)/.vimrc
+	ln -sf $(VIMDIR)/.vimrc $(HOME)/.vimrc
 
 vimconfig:
-	cd $(VIMDIR)/vimconfig/
-	./vimconfig.sh
+	@echo "Installing vim plugins:"
+	-cd $(VIMDIR)/vimconfig/ && ./vimconfig.sh
 	
 
 distclean: 
 	rm -rf $(BACKUPDIR)
-	mv -f $(VIMDIR) $(BACKUPDIR)
-	mv -f $(HOME)/.bashrc $(BACKUPDIR)/.basrc
+	if [ -d $(VIMDIR) ]; then mv -f $(VIMDIR) $(BACKUPDIR); fi
+	if [ -e $(HOME)/.bashrc ]; then mv -f $(HOME)/.bashrc $(BACKUPDIR)/.basrc; fi
 
 
 
