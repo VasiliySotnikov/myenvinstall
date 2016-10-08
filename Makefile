@@ -17,11 +17,7 @@ install:
 	cp .bashrc $(HOME)/.bashrc
 	cp -r --parents .vim $(HOME)/
 	cp -r --parents .dircolors $(HOME)/
-	if [[ $(ps -h -o comm -p $PPID) == xfce4* ]]; then \
-	    cp -r --parents .config/xfce4/terminal/terminalrc $(HOME)/
-	elif [ $(ps -h -o comm -p $PPID) == gnome* ]; then \
-	    ./gnomesolarized.sh
-	fi
+	cp -r --parents .config/xfce4/terminal/terminalrc $(HOME)/
 	ln -s $(VIMDIR)/.vimrc $(HOME)/.vimrc
 
 vimconfig:
@@ -34,3 +30,10 @@ distclean:
 	mv -f $(VIMDIR) $(BACKUPDIR)
 	mv -f $(HOME)/.bashrc $(BACKUPDIR)/.basrc
 
+
+
+#if [[ $(ps -h -o comm -p ($PPID)) == xfce4* ]]; then \
+    cp -r --parents .config/xfce4/terminal/terminalrc $(HOME)/
+#elif [ $(ps -h -o comm -p ($PPID)) == gnome* ]; then \
+    #./gnomesolarized.sh
+#fi
