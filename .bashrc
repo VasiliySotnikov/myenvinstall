@@ -185,3 +185,7 @@ export PROMPT_COMMAND='history -a'
 
 # set ls color scheme
 eval "`dircolors -b $HOME/.dircolors/dircolors.ansi-dark`"
+
+# set vim as default editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
