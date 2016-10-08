@@ -27,7 +27,6 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/
 let g:ycm_extra_conf_globlist = ['~/*']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:tex_flavor='latex'
 
 if has("gui_running")
     set background=light
