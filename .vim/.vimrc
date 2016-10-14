@@ -105,7 +105,7 @@ inoremap <C-S-tab> <ESC>:tabp<CR>li
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 "map <F2> :!ls<CR>:tab drop
-nnoremap <leader>tt :!ls<CR>:tab drop
+nnoremap <leader>tt :!ls<CR>:tab drop 
 
 
 map <silent> <F3> :call ToggleShowMarks()<CR>
