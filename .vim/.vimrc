@@ -27,6 +27,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/
 let g:ycm_extra_conf_globlist = ['~/*']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:tex_flavor='latex'
 
 if has("gui_running")
     set background=light
@@ -89,27 +90,41 @@ function! ToggleShowMarks()
     endif
 endfunction
 
-map <silent> <F3> :call ToggleShowMarks()<CR>
 
 let mapleader="\<Space>"
+
+"Tab navigation:
+nnoremap <tab> <C-w>w
+nnoremap <C-tab> :tabn<CR>
+nnoremap <C-S-tab> :tabp<CR>
+inoremap <C-tab> <ESC>:tabn<CR>li
+inoremap <C-S-tab> <ESC>:tabp<CR>li
+"map <F7> :tabp<CR>
+"map <F8> :tabn<CR>
+"Move tabs at the tab panel
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
-map <F7> :tabp<CR>
-map <F8> :tabn<CR>
-map <F2> :!ls<CR>:tab drop 
+"map <F2> :!ls<CR>:tab drop
+nnoremap <leader>tt :!ls<CR>:tab drop
+
+
+map <silent> <F3> :call ToggleShowMarks()<CR>
 map <F9> :wa<CR>:mksession! ~/.vim/blackhat_session.vim <CR>
 map <F10> :w<CR>
 map <leader>m :call ToggleModifiable()<CR>
+
 inoremap jk <Esc>
 vnoremap ;; <Esc>
-nnoremap <C-J> mpo<Esc>`p
-nnoremap <C-K> mpO<Esc>`p
+nnoremap <C-S-J> mpo<Esc>`p
+nnoremap <C-S-K> mpO<Esc>`p
 inoremap {<CR> {<CR>}<c-o>O
+
+"Some grep recipes:
 nnoremap <F4> /<c-r>=expand("<cword>")<CR><CR>N:Grep -r --exclude="*Darren*worker*" --exclude="cut_part_worker*" --exclude="tags" <cword> *<CR> <c-w>T
 nnoremap <F5> :Grep -r --exclude="*Darren*worker*" --exclude="cut_part_worker*" --exclude="tags"<CR>
+"Launch make in pwd and show quickfix window with errors (if any):
 nnoremap <F6> :w<CR>:make -j5 \| cwindow 20<CR>
 
 set shortmess+=c
-
 set guioptions-=e
 set sessionoptions+=tabpages,globals
