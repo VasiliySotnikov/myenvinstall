@@ -11,12 +11,14 @@ collect:
 	cp $(VIMDIR)/.vimrc ./.vim/.vimrc
 	cp $(VIMDIR)/ftplugin/tex.vim ./.vim/ftplugin/tex.vim
 	cp $(HOME)/.bashrc ./.bashrc
+	cp $(HOME)/.gitconfig ./.gitconfig
 	cp $(HOME)/.config/xfce4/terminal/terminalrc ./.config/xfce4/terminal/terminalrc
 	cp -r $(HOME)/.config/git ./.config/git
 	cp -r $(HOME)/.config/htop ./.config/htop
 
 install:
 	cp .bashrc $(HOME)/.bashrc
+	cp .gitconfig $(HOME)/.gitconfig
 	cp -r --parents .vim $(HOME)/
 	cp -r --parents .dircolors $(HOME)/
 	cp -r --parents .config/ $(HOME)/
