@@ -18,8 +18,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=9000
+HISTSIZE=10000
+HISTFILESIZE=1000000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -91,6 +91,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# let less to pick up ANSI color from the pipe
+alias less='less -R'
+
 # quickly open with the default program
 alias op='xdg-open > /dev/null 2>&1'
 
@@ -130,7 +133,8 @@ export LD_LIBRARY_PATH="$HOME/local/lib":$LD_LIBRARY_PATH
 reconfigbh() {
     cd "$HOME/blackhat/$(pwd | sed "s/.*blackhat\/\([^\/]*\)\/*.*/\1/")"; 
     autoreconf -fi
-    (cd build/; ../configure --prefix=$PWD --with-QDpath=$HOME/local/ --enable-public=no --enable-readline=no --enable-BHdebug=yes && make -j && make install)
+    OPTIONS="$@"
+    (cd build/; ../configure --prefix=$PWD --with-QDpath=$HOME/local/ --enable-public=no --enable-readline=no --enable-BHdebug=yes CXXFLAGS="$OPTIONS" && make -j && make install)
     cd - >/dev/null
 }
 
@@ -145,7 +149,7 @@ buildandmaketest(){
 }
 
 maketest(){
-    make ""$1".exe" >/dev/null && ./"$1" 
+    make ""$1".exe" >/dev/null && ./"$1" 2>&1 | tee ""$1".log" 
 }
 
 

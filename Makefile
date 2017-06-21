@@ -12,12 +12,14 @@ collect:
 	cp $(VIMDIR)/ftplugin/tex.vim ./.vim/ftplugin/tex.vim
 	cp $(HOME)/.bashrc ./.bashrc
 	cp $(HOME)/.config/xfce4/terminal/terminalrc ./.config/xfce4/terminal/terminalrc
+	cp -r $(HOME)/.config/git ./.config/git
+	cp -r $(HOME)/.config/htop ./.config/htop
 
 install:
 	cp .bashrc $(HOME)/.bashrc
 	cp -r --parents .vim $(HOME)/
 	cp -r --parents .dircolors $(HOME)/
-	cp -r --parents .config/xfce4/terminal/terminalrc $(HOME)/
+	cp -r --parents .config/ $(HOME)/
 	ln -sf $(VIMDIR)/.vimrc $(HOME)/.vimrc
 
 vimconfig:
