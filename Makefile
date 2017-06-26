@@ -13,8 +13,8 @@ collect:
 	cp $(HOME)/.bashrc ./.bashrc
 	cp $(HOME)/.gitconfig ./.gitconfig
 	cp $(HOME)/.config/xfce4/terminal/terminalrc ./.config/xfce4/terminal/terminalrc
-	cp -r $(HOME)/.config/git ./.config/git
-	cp -r $(HOME)/.config/htop ./.config/htop
+	cp -r $(HOME)/.config/git ./.config/
+	cp -r $(HOME)/.config/htop ./.config/
 
 install:
 	cp .bashrc $(HOME)/.bashrc
@@ -34,6 +34,9 @@ distclean:
 	if [ -d $(VIMDIR) ]; then mv -f $(VIMDIR) $(BACKUPDIR); fi
 	if [ -e $(HOME)/.bashrc ]; then mv -f $(HOME)/.bashrc $(BACKUPDIR)/.basrc; fi
 
+diff:
+	make collect
+	git diff
 
 
 #if [[ $(ps -h -o comm -p ($PPID)) == xfce4* ]]; then \
