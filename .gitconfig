@@ -1,0 +1,23 @@
+[credential]
+	helper = cache
+[user]
+	email = vasily.sotnikov@physik.uni-freiburg.de
+	name = Vasily Sotnikov
+[diff]
+	tool = vimdiff
+[difftool]
+        prompt = false
+        trustExitCode = true
+[alias]
+	co = checkout
+	st = status
+	ci = commit
+	br = branch
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	dt = difftool
+	lgtr = log --graph --decorate --all --abbrev-commit
+[push]
+	default = simple
+[core]
+	editor = vim -c 'set spell'

@@ -7,6 +7,8 @@ filetype plugin indent on
 syntax on
 syntax enable
 
+autocmd! BufRead,BufNewFile *.dat     setfiletype sh
+
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
