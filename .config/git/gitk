@@ -4,7 +4,7 @@ set uifont {sans 9 bold}
 set tabstop 8
 set findmergefiles 0
 set maxgraphpct 50
-set maxwidth 16
+set maxwidth 20
 set cmitmode patch
 set wrapcomment none
 set autoselect 1
@@ -51,11 +51,11 @@ set indexcirclecolor green
 set circlecolors {white blue gray blue blue}
 set linkfgcolor blue
 set circleoutlinecolor black
-set geometry(main) 1920x1118+0+31
+set geometry(main) 1920x1118+0+0
 set geometry(state) normal
 set geometry(topwidth) 1920
 set geometry(topheight) 210
-set geometry(pwsash0) "723 1"
+set geometry(pwsash0) "941 1"
 set geometry(pwsash1) "1085 1"
 set geometry(botwidth) 901
 set geometry(botheight) 903

@@ -4,11 +4,12 @@
 	email = vasily.sotnikov@physik.uni-freiburg.de
 	name = Vasily Sotnikov
 [diff]
-	tool = vimdiff
+        tool=meld
 [difftool]
         prompt = false
         trustExitCode = true
 [alias]
+        diffnsp = diff -U0 -w
 	co = checkout
 	st = status
 	ci = commit
@@ -17,7 +18,11 @@
 	last = log -1 HEAD
 	dt = difftool
 	lgtr = log --graph --decorate --all --abbrev-commit
+        radd = "!git ls-files "$1" | xargs git add"
+        rco = "!git ls-files "$1" | xargs git co"
 [push]
 	default = simple
 [core]
 	editor = vim -c 'set spell'
+[gui]
+	displayuntracked = false
