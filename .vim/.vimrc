@@ -20,6 +20,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jacquesbh/vim-showmarks'
 Plugin 'grep.vim'
+Plugin 'tpope/vim-fugitive.git'
 call vundle#end()
 
 "this is a fix for the bug with highlighting in c preprocessor macros

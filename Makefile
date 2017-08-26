@@ -11,7 +11,6 @@ collect:
 	cp $(VIMDIR)/.vimrc ./.vim/.vimrc
 	cp $(VIMDIR)/ftplugin/tex.vim ./.vim/ftplugin/tex.vim
 	cp $(HOME)/.bashrc ./.bashrc
-	cp $(HOME)/.bash_profile ./.bash_profile
 	cp $(HOME)/.gitconfig ./.gitconfig
 	cp $(HOME)/.config/xfce4/terminal/terminalrc ./.config/xfce4/terminal/terminalrc
 	cp -r $(HOME)/.config/git ./.config/
@@ -46,3 +45,4 @@ diff:
 #elif [ $(ps -h -o comm -p ($PPID)) == gnome* ]; then \
     #./gnomesolarized.sh
 #fi
+	#cp $(HOME)/.bash_profile ./.bash_profile
