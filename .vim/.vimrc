@@ -13,6 +13,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'tpope/vim-surround'
@@ -24,7 +25,7 @@ Plugin 'tpope/vim-fugitive.git'
 call vundle#end()
 
 "this is a fix for the bug with highlighting in c preprocessor macros
-hi link cCppOut2 PreProc
+"hi link cCppOut2 PreProc
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_extra_conf_globlist = ['~/*']

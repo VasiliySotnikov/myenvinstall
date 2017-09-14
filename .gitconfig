@@ -11,6 +11,7 @@
 [alias]
         diffnsp = diff -U0 -w
 	co = checkout
+        ca = commit -a --amend --no-edit
 	st = status
 	ci = commit
 	br = branch
