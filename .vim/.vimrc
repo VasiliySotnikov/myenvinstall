@@ -116,8 +116,7 @@ nnoremap <tab> <C-w>w
 "Move tabs at the tab panel
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
-"map <F2> :!ls<CR>:tab drop
-nnoremap <leader>tt :!ls<CR>:tab drop 
+nnoremap <leader>tt <CR>:tab drop 
 
 map <silent> <F3> :call ToggleShowMarks()<CR>
 map <F9> :wa<CR>:mksession! ~/.vim/blackhat_session.vim <CR>
@@ -128,11 +127,16 @@ inoremap jk <Esc>
 vnoremap ;; <Esc>
 inoremap {<CR> {<CR>}<c-o>O
 
+" Vim-latex corrupts this for some reason
+unmap <C-i>
+
 "Some grep recipes:
 nnoremap <F4> /<c-r>=expand("<cword>")<CR><CR>N:Grep -r --exclude="tags" <cword> *<CR> <c-w>T
 nnoremap <F5> :Grep -r --exclude="tags"<CR>
 "Launch make in pwd and show quickfix window with errors (if any):
 nnoremap <F6> :w<CR>:make -j1<CR>:copen<CR> 
+
+set winaltkeys=no
 
 set shortmess+=c
 set guioptions-=e
