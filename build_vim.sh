@@ -19,10 +19,10 @@ PYCFG=$(dpkg -S "*python3*config.c" | sed "s/.*:\ \(\/.*\)config\.c/\1/")
 make VIMRUNTIMEDIR=$HOME/local/share/vim/vim80 -j5
 make install
 
-cd $HOME/.vim/bundle/
-git clone https://github.com/Valloric/YouCompleteMe.git || true
-cd YouCompleteME
-git pull
-make distclean
-git submodule update --init --recursive
-python3 install.py --clang--completer
+#cd $HOME/.vim/bundle/
+#git clone https://github.com/Valloric/YouCompleteMe.git || true
+#cd YouCompleteME
+#git pull
+#git submodule update --init --recursive
+#make distclean
+#python3 install.py --clang--completer
