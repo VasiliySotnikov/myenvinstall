@@ -22,6 +22,9 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'jacquesbh/vim-showmarks'
 Plugin 'grep.vim'
 Plugin 'tpope/vim-fugitive.git'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'terryma/vim-expand-region'
+Plugin 'kien/ctrlp.vim'
 call vundle#end()
 
 "this is a fix for the bug with highlighting in c preprocessor macros
@@ -35,7 +38,6 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 
 if has("gui_running")
     set background=light
-    nmap <Esc> :q<CR>
     nnoremap <C-tab> :tabn<CR>
     nnoremap <C-S-tab> :tabp<CR>
     inoremap <C-tab> <ESC>:tabn<CR>li
@@ -48,11 +50,13 @@ else
     set background=dark
     nnoremap <F7> :tabp<CR>
     nnoremap <F8> :tabn<CR>
-    nnoremap <C-Down> mpo<Esc>`p
-    nnoremap <C-Up> mpO<Esc>`p
+    nnoremap <silent><K> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+    nnoremap <silent><K> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+    nnoremap <silent>k :set paste<CR>m`O<Esc>``:set nopaste<CR>
+    nnoremap <silent>j :set paste<CR>m`o<Esc>``:set nopaste<CR>
 endif
 
-colorscheme solarized 
+colorscheme solarized
 
 set wildmenu
 set showcmd
@@ -120,7 +124,6 @@ nnoremap <leader>tt <CR>:tab drop
 
 map <silent> <F3> :call ToggleShowMarks()<CR>
 map <F9> :wa<CR>:mksession! ~/.vim/blackhat_session.vim <CR>
-map <F10> :w<CR>
 map <leader>m :call ToggleModifiable()<CR>
 
 inoremap jk <Esc>
@@ -134,7 +137,7 @@ unmap <C-i>
 nnoremap <F4> /<c-r>=expand("<cword>")<CR><CR>N:Grep -r --exclude="tags" <cword> *<CR> <c-w>T
 nnoremap <F5> :Grep -r --exclude="tags"<CR>
 "Launch make in pwd and show quickfix window with errors (if any):
-nnoremap <F6> :w<CR>:make -j1<CR>:copen<CR> 
+nnoremap <F6> :w<CR>:make -j1<CR>:copen<CR>
 
 set winaltkeys=no
 
