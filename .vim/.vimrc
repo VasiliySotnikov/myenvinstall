@@ -37,8 +37,8 @@ call vundle#end()
 "hi link cCppOut2 PreProc
 
 " Options for ycm
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_extra_conf_globlist = ['~/*']
+"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_extra_conf_globlist = ['~/*']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
