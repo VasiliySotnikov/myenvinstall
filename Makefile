@@ -18,7 +18,6 @@ collect:
 
 install:
 	cp .bashrc $(HOME)/.bashrc
-	cp .bash_profile $(HOME)/.bash_profile
 	cp .gitconfig $(HOME)/.gitconfig
 	cp -r --parents .vim $(HOME)/
 	cp -r --parents .dircolors $(HOME)/
@@ -45,4 +44,3 @@ diff:
 #elif [ $(ps -h -o comm -p ($PPID)) == gnome* ]; then \
     #./gnomesolarized.sh
 #fi
-	#cp $(HOME)/.bash_profile ./.bash_profile
