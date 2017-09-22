@@ -10,4 +10,16 @@ set softtabstop=2
 set iskeyword+=:
 
 map <leader>la <F10><leader>ll<leader>lv
-map <leader>fr o\begin{frame}[<++>]<CR>\frametitle{<++>}<CR><++><CR>\end{frame}<CR><++><ESC>`[<C-j>
+"map <leader>fr o\begin{frame}[<++>]<CR>\frametitle{<++>}<CR><++><CR>\end{frame}<CR><++><ESC>`[<C-j>
+
+let g:Tex_Env_frame = "\\begin{frame}\<CR>\\frametitle{<++>}\<CR><++>\<CR>\\end{frame}\<CR><++>"
+call IMAP('EFR', g:Tex_Env_frame,'tex')
+
+let g:Tex_Env_block = "\\begin{block}{<++>}\<CR><++>\<CR>\\end{block}\<CR><++>"
+call IMAP('EBL', g:Tex_Env_block,'tex')
+
+let g:Tex_Env_column = "\\begin{column}{<++>}\<CR><++>\<CR>\\end{column}\<CR><++>"
+call IMAP('ECO', g:Tex_Env_column,'tex')
+
+let g:Tex_Env_multline = "\\begin{multline}\<CR><++>\<CR>\\end{multline}\<CR><++>"
+call IMAP('EML', g:Tex_Env_multline,'tex')
