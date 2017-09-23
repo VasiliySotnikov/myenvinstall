@@ -162,3 +162,5 @@ set winaltkeys=no
 set shortmess+=c
 set guioptions-=e
 set sessionoptions+=tabpages,globals
+
+let g:session_autosave = "no"
