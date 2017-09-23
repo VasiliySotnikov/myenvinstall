@@ -15,9 +15,11 @@ collect:
 	cp $(HOME)/.config/xfce4/terminal/terminalrc ./.config/xfce4/terminal/terminalrc
 	cp -r $(HOME)/.config/git ./.config/
 	cp -r $(HOME)/.config/htop ./.config/
+	cp $(HOME)/.latexmkrc ./.latexmkrc
 
 install:
 	cp .bashrc $(HOME)/.bashrc
+	cp .latexmkrc $(HOME)/.latexmkrc
 	cp .gitconfig $(HOME)/.gitconfig
 	cp -r --parents .vim $(HOME)/
 	cp -r --parents .dircolors $(HOME)/
