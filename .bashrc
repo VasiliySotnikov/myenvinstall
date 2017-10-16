@@ -10,16 +10,35 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
+#HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
-shopt -s histappend
+#shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=10000
-HISTFILESIZE=1000000
+HISTFILESIZE=$HISTSIZE
+# don't put duplicate lines or lines starting with space in the history.
+HISTCONTROL=ignorespace:ignoredups
+
+## reedit a history substitution line if it failed
+shopt -s histreedit
+## edit a recalled history line before executing
+shopt -s histverify
+
+_bash_history_sync() {
+    builtin history -a         #1
+    HISTFILESIZE=$HISTSIZE     #2
+    #builtin history -c         #3
+    #builtin history -r         #4
+}
+
+history() {                  #5
+    _bash_history_sync
+    builtin history "$@"
+}
+
+PROMPT_COMMAND="_bash_history_sync; $PROMPT_COMMAND"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -179,14 +198,9 @@ svnpass(){
         start_agent;
     fi
 }
-#******************************************
-
-alias cdb='cd ~/blackhat/BHlib_Top/'
 
 # ******************************************
 
-# This makes all terminals write commands in history immediately
-export PROMPT_COMMAND='history -a'
 
 # set ls color scheme
 eval "`dircolors -b $HOME/.dircolors/dircolors.ansi-dark`"
