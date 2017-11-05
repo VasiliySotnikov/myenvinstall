@@ -14,7 +14,6 @@ collect:
 	cp $(HOME)/.gitconfig ./.gitconfig
 	cp $(HOME)/.config/xfce4/terminal/terminalrc ./.config/xfce4/terminal/terminalrc
 	cp -r $(HOME)/.config/git ./.config/
-	cp -r $(HOME)/.config/htop ./.config/
 	cp $(HOME)/.latexmkrc ./.latexmkrc
 
 install:

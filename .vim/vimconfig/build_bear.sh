@@ -2,6 +2,7 @@
 
 # install also a tool to generate compile database
 cd $HOME/scratch
+rm -rf Bear
 git clone https://github.com/rizsotto/Bear.git
 cd Bear
 git pull

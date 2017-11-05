@@ -36,6 +36,8 @@ call vundle#end()
 "this is a fix for the bug with highlighting in c preprocessor macros (looks to be fixed in a new version)
 "hi link cCppOut2 PreProc
 
+let g:session_autosave = 'no'
+
 " Options for ycm
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 "let g:ycm_extra_conf_globlist = ['~/*']
