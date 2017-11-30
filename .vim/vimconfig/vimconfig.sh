@@ -13,5 +13,5 @@ rm vim-latex-1.9.0.tar.gz
 
 cd -
 ./installYCM.sh
-#./setupYCMGenerator.sh
+./setupYCMGenerator.sh
 ./build_bear.sh

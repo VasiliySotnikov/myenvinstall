@@ -43,6 +43,7 @@ let g:session_autosave = 'no'
 "let g:ycm_extra_conf_globlist = ['~/*']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_complete_in_comments=1
 
 let mapleader="\<Space>"
 
