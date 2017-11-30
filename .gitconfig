@@ -18,8 +18,8 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	dt = difftool
-        lg = log --graph --pretty=format:'%Cred%h%Creset %C(red bold)%d%Creset | %C(normal)%ad%Creset | %C(dim)<%an>%Creset %n %<(120,trunc)%s %n' --date=format:'%d.%m.%Y %H:%M:%S'
-        tree = log --graph --all --pretty=format:'%Cred%h%Creset %C(red bold)%d%Creset | %C(normal)%ad%Creset | %C(dim)<%an>%Creset %n %<(120,trunc)%s %n' --date=format:'%d.%m.%Y %H:%M:%S'
+        lg = log --graph --pretty=format:'%Cred%h%Creset %C(auto)%d%Creset | %C(normal)%ad%Creset | %C(dim)<%an>%Creset %n %<(120,trunc)%s %n' --date=format:'%d.%m.%Y %H:%M:%S' --decorate
+        tree = log --graph --all --pretty=format:'%Cred%h%Creset %C(auto)%d%Creset | %C(normal)%ad%Creset | %C(dim)<%an>%Creset %n %<(120,trunc)%s %n' --date=format:'%d.%m.%Y %H:%M:%S'
         radd = "!git ls-files "$1" | xargs git add"
         rco = "!git ls-files "$1" | xargs git co"
         wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
