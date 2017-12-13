@@ -9,7 +9,7 @@ set shiftwidth=2
 set softtabstop=2
 set iskeyword+=:
 
-map <leader>la <F10><leader>ll<leader>lv
+map <leader>la :w<CR><leader>ll<leader>lv
 "map <leader>fr o\begin{frame}[<++>]<CR>\frametitle{<++>}<CR><++><CR>\end{frame}<CR><++><ESC>`[<C-j>
 
 let g:Tex_Env_frame = "\\begin{frame}\<CR>\\frametitle{<++>}\<CR><++>\<CR>\\end{frame}\<CR><++>"

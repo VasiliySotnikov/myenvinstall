@@ -3,12 +3,12 @@ set textfont {monospace 9}
 set uifont {sans 9 bold}
 set tabstop 8
 set findmergefiles 0
-set maxgraphpct 50
-set maxwidth 20
-set cmitmode patch
+set maxgraphpct 60
+set maxwidth 100
+set cmitmode tree
 set wrapcomment none
 set autoselect 1
-set autosellen 40
+set autosellen 20
 set showneartags 1
 set maxrefs 20
 set visiblerefs {"master"}
@@ -51,12 +51,13 @@ set indexcirclecolor green
 set circlecolors {white blue gray blue blue}
 set linkfgcolor blue
 set circleoutlinecolor black
-set geometry(main) 1920x1118+0+0
+set geometry(main) 1920x1111+0+0
 set geometry(state) normal
 set geometry(topwidth) 1920
-set geometry(topheight) 210
-set geometry(pwsash0) "941 1"
-set geometry(pwsash1) "1085 1"
-set geometry(botwidth) 901
-set geometry(botheight) 903
-set permviews {}
+set geometry(topheight) 554
+set geometry(pwsash0) "1624 1"
+set geometry(pwsash1) "1889 1"
+set geometry(botwidth) 1249
+set geometry(botheight) 552
+set permviews {{{Command line} {} {--all --branches --tags --remotes} {}}
+}
