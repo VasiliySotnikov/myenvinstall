@@ -18,7 +18,7 @@ call IMAP('EFR', g:Tex_Env_frame,'tex')
 let g:Tex_Env_block = "\\begin{block}{<++>}\<CR><++>\<CR>\\end{block}\<CR><++>"
 call IMAP('EBL', g:Tex_Env_block,'tex')
 
-let g:Tex_Env_column = "\\begin{column}{<++>}\<CR><++>\<CR>\\end{column}\<CR><++>"
+let g:Tex_Env_column = "\\begin{column}{<++>\\textwidth}\<CR><++>\<CR>\\end{column}\<CR><++>"
 call IMAP('ECO', g:Tex_Env_column,'tex')
 
 let g:Tex_Env_multline = "\\begin{multline}\<CR><++>\<CR>\\end{multline}\<CR><++>"

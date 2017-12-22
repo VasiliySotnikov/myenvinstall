@@ -36,8 +36,6 @@ call vundle#end()
 "this is a fix for the bug with highlighting in c preprocessor macros (looks to be fixed in a new version)
 "hi link cCppOut2 PreProc
 
-let g:session_autosave = 'no'
-
 " Options for ycm
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 "let g:ycm_extra_conf_globlist = ['~/*']
@@ -148,6 +146,10 @@ endfunction
 map <silent> <F3> :call ToggleShowMarks()<CR>
 map <F9> :wa<CR>:mksession! ~/.vim/blackhat_session.vim <CR>
 map <leader>m :call ToggleModifiable()<CR>
+
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 nnoremap <leader>w :w<CR>
 inoremap jk <Esc>
