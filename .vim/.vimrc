@@ -10,6 +10,9 @@ syntax enable
 " Highlight stuff in *.dat files as in shell script
 autocmd! BufRead,BufNewFile *.dat     setfiletype sh
 
+" Automatically set spell for commit messages
+autocmd! BufRead,BufNewFile COMMIT_EDITMSG setlocal spell
+
 set history=1000
 
 " Load plugins
