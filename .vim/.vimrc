@@ -97,6 +97,8 @@ set expandtab
 set encoding=utf-8
 set showmatch
 
+set scrolloff=5
+
 set foldcolumn=1
 
 " Tab navigation:
@@ -147,8 +149,8 @@ endfunction
 
 
 map <silent> <F3> :call ToggleShowMarks()<CR>
-map <F9> :wa<CR>:mksession! ~/.vim/blackhat_session.vim <CR>
-map <leader>m :call ToggleModifiable()<CR>
+nnoremap <leader>m :call ToggleModifiable()<CR>
+nnoremap <leader>g :Gstatus<CR>
 
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
