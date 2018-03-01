@@ -158,18 +158,11 @@ reconfigbh() {
     cd - >/dev/null
 }
 
-buildandmaketest(){
-    if [ "$(hostname)" == "london" ]; then
-        echo "make -j5"
-        (cd ../; make -j5 >/dev/null && make install >/dev/null) && maketest "$1"
-    else 
-        echo "make -j" 
-        (cd ../; make -j >/dev/null && make install >/dev/null) && maketest "$1"
-    fi
-}
-
 maketest(){
-    make ""$1".exe" >/dev/null && ./"$1" 2>&1 | tee ""$1".log" 
+    touch -c ../../my_programs/"$1".cpp && make ""$1".exe" $2 && (./"$1" 2>&1) | tee ""$1".log"
+}
+buildandmaketest(){
+    (cd ../; make $2 && make install >/dev/null) && maketest "$1" $2
 }
 
 
