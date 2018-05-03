@@ -13,6 +13,8 @@ autocmd! BufRead,BufNewFile *.dat     setfiletype sh
 " Automatically set spell for commit messages
 autocmd! BufRead,BufNewFile COMMIT_EDITMSG setlocal spell
 
+let $PATH = $HOME.'/local/bin/:'.$PATH
+
 set history=1000
 
 " Load plugins
@@ -34,6 +36,7 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'kien/ctrlp.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
+Plugin 'rhysd/vim-clang-format'
 call vundle#end()
 
 "this is a fix for the bug with highlighting in c preprocessor macros (looks to be fixed in a new version)
@@ -151,6 +154,9 @@ endfunction
 map <silent> <F3> :call ToggleShowMarks()<CR>
 nnoremap <leader>m :call ToggleModifiable()<CR>
 nnoremap <leader>g :Gstatus<CR>
+
+nnoremap <leader>= :ClangFormat<CR>
+vnoremap == :ClangFormat<CR>
 
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
