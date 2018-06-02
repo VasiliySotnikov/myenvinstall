@@ -171,7 +171,7 @@ inoremap {<CR> {<CR>}<c-o>O
 nnoremap <F4> /<c-r>=expand("<cword>")<CR><CR>N:Grep -r --exclude="tags" \<<cword>\> *<CR> <c-w>T
 nnoremap <F5> :Grep -r --exclude="tags"<CR>
 "Launch make in pwd and show quickfix window with errors (if any):
-nnoremap <F6> :w<CR>:make -j1<CR>:copen<CR>
+nnoremap <F6> :w<CR>:make -j4<CR>:copen<CR>
 
 set winaltkeys=no
 
