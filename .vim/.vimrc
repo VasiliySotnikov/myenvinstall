@@ -45,9 +45,9 @@ call vundle#end()
 " Options for ycm
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 "let g:ycm_extra_conf_globlist = ['~/*']
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_complete_in_comments=1
+set completeopt-=preview
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 let mapleader="\<Space>"
 
@@ -168,7 +168,7 @@ vnoremap ;; <Esc>
 inoremap {<CR> {<CR>}<c-o>O
 
 "Some grep recipes:
-nnoremap <F4> /<c-r>=expand("<cword>")<CR><CR>N:Grep -r --exclude="tags" <cword> *<CR> <c-w>T
+nnoremap <F4> /<c-r>=expand("<cword>")<CR><CR>N:Grep -r --exclude="tags" \<<cword>\> *<CR> <c-w>T
 nnoremap <F5> :Grep -r --exclude="tags"<CR>
 "Launch make in pwd and show quickfix window with errors (if any):
 nnoremap <F6> :w<CR>:make -j1<CR>:copen<CR>
