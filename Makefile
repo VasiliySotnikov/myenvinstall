@@ -3,7 +3,7 @@ VIMDIR=$(HOME)/.vim
 BACKUPDIR=$(HOME)/.vim_old
 
 
-all:  install vimconfig
+all:  install vimconfig ctags
 
 
 collect:
@@ -28,7 +28,10 @@ install:
 vimconfig:
 	@echo "Installing vim plugins:"
 	-cd $(VIMDIR)/vimconfig/ && ./vimconfig.sh
-	
+
+ctags:
+	./install_ctags.sh
+
 
 distclean: 
 	rm -rf $(BACKUPDIR)
