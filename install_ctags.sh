@@ -7,10 +7,10 @@ git clone https://github.com/universal-ctags/ctags.git || true
 cd ctags
 git pull
 
-make clean
-
 ./autogen.sh
 ./configure --prefix=$HOME/local
+
+make clean
 make -j$(nproc)
 make install
 
