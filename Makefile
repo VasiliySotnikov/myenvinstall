@@ -15,11 +15,13 @@ collect:
 	cp $(HOME)/.config/xfce4/terminal/terminalrc ./.config/xfce4/terminal/terminalrc
 	cp -r $(HOME)/.config/git ./.config/
 	cp $(HOME)/.latexmkrc ./.latexmkrc
+	cp $(HOME)/.tmux.conf ./.tmux.conf
 
 install:
 	cp .bashrc $(HOME)/.bashrc
 	cp .latexmkrc $(HOME)/.latexmkrc
 	cp .gitconfig $(HOME)/.gitconfig
+	cp .tmux.conf $(HOME)/.tmux.conf
 	cp -r --parents .vim $(HOME)/
 	cp -r --parents .dircolors $(HOME)/
 	cp -r --parents .config/ $(HOME)/
@@ -31,6 +33,9 @@ vimconfig:
 
 ctags:
 	./install_ctags.sh
+
+setup_tmux:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 
 distclean: 
