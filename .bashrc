@@ -202,3 +202,5 @@ eval "`dircolors -b $HOME/.dircolors/dircolors.ansi-dark`"
 # set vim as default editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+set -o vi
