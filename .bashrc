@@ -204,3 +204,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 set -o vi
+
+# set pkgconfig path for local packages
+export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig/:$PKG_CONFIG_PATH"
+

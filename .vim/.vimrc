@@ -57,6 +57,13 @@ if has("gui_running")
   set guioptions-=T  "remove toolbar
 endif
 
+" vim-session settings
+let g:session_autoload='no'
+let g:session_autosave_periodic=5
+let g:session_autosave_silent=1
+let g:session_default_to_last=1
+let g:session_persist_font = 0
+let g:session_persist_colors = 0
 
 colorscheme solarized
 
