@@ -110,6 +110,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias g=git
+
 # let less to pick up ANSI color from the pipe
 alias less='less -R'
 

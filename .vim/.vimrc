@@ -99,6 +99,8 @@ set visualbell
 
 set cmdheight=2
 set number
+
+set incsearch
 set hlsearch
 
 set shiftwidth=4
