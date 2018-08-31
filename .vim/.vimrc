@@ -37,7 +37,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'rhysd/vim-clang-format'
-Plugin 'craigemery/vim-autotag'
+"Plugin 'craigemery/vim-autotag'
 call vundle#end()
 
 "this is a fix for the bug with highlighting in c preprocessor macros (looks to be fixed in a new version)
@@ -89,6 +89,8 @@ set showcmd
 
 set backspace=indent,eol,start
 set autoindent
+
+set noswapfile
 
 set ruler
 set laststatus=2
@@ -179,7 +181,7 @@ inoremap {<CR> {<CR>}<c-o>O
 
 "Some grep recipes:
 nnoremap <F4> /<c-r>=expand("<cword>")<CR><CR>N:Grep -r --exclude="tags" \<<cword>\> *<CR> <c-w>T
-nnoremap <F5> :Grep -r --exclude="tags"<CR>
+nnoremap <leader>ss :Grep -r --exclude="tags"<CR>
 "Launch make in pwd and show quickfix window with errors (if any):
 nnoremap <F6> :w<CR>:make -j4<CR>:copen<CR>
 
