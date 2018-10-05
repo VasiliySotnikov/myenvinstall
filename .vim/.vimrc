@@ -93,6 +93,8 @@ set backspace=indent,eol,start
 set autoindent
 
 set noswapfile
+set undofile " Maintain undo history between sessions
+set undodir=~/tmp
 
 set ruler
 set laststatus=2
