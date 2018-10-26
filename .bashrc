@@ -145,8 +145,12 @@ fi
 # Link locally built libraries
 export PATH="$HOME/local/bin":$PATH
 export PATH="$HOME/local/usr/bin":$PATH
+# pip bin
+export PATH="$HOME/.local/bin":$PATH
 export LD_LIBRARY_PATH="$HOME/local/lib":"$HOME/local/lib64":$LD_LIBRARY_PATH 
 export LD_LIBRARY_PATH="$HOME/local/usr/lib":$LD_LIBRARY_PATH 
+
+export NINJA_STATUS="%r running [%f/%t] elapsed: %e s || "
 
 
 # ******************************************
