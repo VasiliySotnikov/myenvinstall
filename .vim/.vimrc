@@ -194,3 +194,5 @@ set winaltkeys=no
 set shortmess+=c
 set guioptions-=e
 set sessionoptions+=tabpages,globals
+
+set spelllang=en_us
