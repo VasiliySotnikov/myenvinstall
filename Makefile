@@ -10,7 +10,7 @@ collect:
 	@echo "Collecting information from the current machine:"
 	cp $(VIMDIR)/.vimrc ./.vim/.vimrc
 	cp $(VIMDIR)/filetype.vim ./.vim/filetype.vim
-	cp $(VIMDIR)/ftplugin/tex.vim ./.vim/ftplugin/tex.vim
+	cp -t ./.vim/ftplugin -- $(VIMDIR)/ftplugin/*.vim
 	cp $(HOME)/.bashrc ./.bashrc
 	cp $(HOME)/.gitconfig ./.gitconfig
 	cp $(HOME)/.config/xfce4/terminal/terminalrc ./.config/xfce4/terminal/terminalrc
