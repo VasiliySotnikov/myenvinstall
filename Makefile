@@ -3,7 +3,7 @@ VIMDIR=$(HOME)/.vim
 BACKUPDIR=$(HOME)/.vim_old
 
 
-all:  install vimconfig ctags
+all:  install vimconfig ctags mathematica
 
 
 collect:
@@ -18,7 +18,7 @@ collect:
 	cp $(HOME)/.latexmkrc ./.latexmkrc
 	cp $(HOME)/.tmux.conf ./.tmux.conf
 
-install:
+install: mathematica
 	cp .bashrc $(HOME)/.bashrc
 	cp .latexmkrc $(HOME)/.latexmkrc
 	cp .gitconfig $(HOME)/.gitconfig
@@ -34,6 +34,9 @@ vimconfig:
 
 ctags:
 	./install_ctags.sh
+
+mathematica:
+	./MathematicaNotebookSave.sh
 
 setup_tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
