@@ -9,7 +9,7 @@ all:  install vimconfig ctags mathematica
 collect:
 	@echo "Collecting information from the current machine:"
 	cp $(VIMDIR)/.vimrc ./.vim/.vimrc
-	cp $(VIMDIR)/filetype.vim ./.vim/filetype.vim
+	cp $(VIMDIR)/filetype.vim ./.vim/filetype.vim || true
 	cp -t ./.vim/ftplugin -- $(VIMDIR)/ftplugin/*.vim
 	cp $(HOME)/.bashrc ./.bashrc
 	cp $(HOME)/.gitconfig ./.gitconfig
@@ -17,6 +17,7 @@ collect:
 	cp -r $(HOME)/.config/git ./.config/
 	cp $(HOME)/.latexmkrc ./.latexmkrc
 	cp $(HOME)/.tmux.conf ./.tmux.conf
+	cp $(HOME)/.ssh/config ./.ssh/config || true
 
 install: mathematica
 	cp .bashrc $(HOME)/.bashrc
@@ -27,6 +28,7 @@ install: mathematica
 	cp -r --parents .dircolors $(HOME)/
 	cp -r --parents .config/ $(HOME)/
 	ln -sf $(VIMDIR)/.vimrc $(HOME)/.vimrc
+	cp ./.ssh/config $(HOME)/.ssh/config || true
 
 vimconfig:
 	@echo "Installing vim plugins:"
