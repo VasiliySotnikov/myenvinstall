@@ -188,10 +188,10 @@ vnoremap ;; <Esc>
 inoremap {<CR> {<CR>}<c-o>O
 
 "Some grep recipes:
-nnoremap <F4> /<c-r>=expand("<cword>")<CR><CR>N:Grep -r --exclude="tags" \<<cword>\> *<CR> <c-w>T
-nnoremap <leader>ss :Grep -r --exclude="tags"<CR>
+nnoremap <F4> /<c-r>=expand("<cword>")<CR><CR>N:Grep -r --exclude="tags" --exclude-dir="build*" \<<cword>\> *<CR> <c-w>T
+nnoremap <leader>ss :Grep -r --exclude="tags" --exclude-dir="build*"<CR>
 "Launch make in pwd and show quickfix window with errors (if any):
-nnoremap <F6> :w<CR>:make -j4<CR>:copen<CR>
+nnoremap <F6> :w<CR>:make <CR>:copen<CR>
 
 set winaltkeys=no
 
