@@ -52,7 +52,7 @@ set completeopt-=preview
 "let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_max_diagnostics_to_display = 100
 
-let g:ycm_filetype_whitelist = { 'cpp': 1 }
+let g:ycm_filetype_whitelist = { 'cpp': 1 , 'python': 1 }
 
 let mapleader="\<Space>"
 
