@@ -82,7 +82,7 @@ if has("gui_running")
     nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 else
     set background=dark
-    nnoremap <silent><K> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+    nnoremap <silent><J> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
     nnoremap <silent><K> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
     nnoremap <silent>k :set paste<CR>m`O<Esc>``:set nopaste<CR>
     nnoremap <silent>j :set paste<CR>m`o<Esc>``:set nopaste<CR>
@@ -206,3 +206,7 @@ set guioptions-=e
 set sessionoptions+=tabpages,globals
 
 set spelllang=en_us
+
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j " Delete comment character when joining commented lines
+endif

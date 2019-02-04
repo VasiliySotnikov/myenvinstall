@@ -34,3 +34,5 @@
 	editor = vim -c 'set spell'
 [gui]
 	displayuntracked = false
+[rebase]
+        autosquash = true
