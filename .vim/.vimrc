@@ -173,7 +173,13 @@ endfunction
 
 map <silent> <F3> :call ToggleShowMarks()<CR>
 nnoremap <leader>m :call ToggleModifiable()<CR>
-nnoremap <leader>g :Gstatus<CR>
+
+"useful fugitive mappings
+nnoremap <leader>gs :Gstatus<CR><C-W>T:-tabmove<CR>
+nnoremap <leader>ge :Gedit<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gl :Glog -10 -- %<CR><CR>:copen<CR><C-W>k
+nnoremap <leader>gpu :Gpush<CR>
 
 nnoremap <leader>= :ClangFormat<CR>
 vnoremap == :ClangFormat<CR>
