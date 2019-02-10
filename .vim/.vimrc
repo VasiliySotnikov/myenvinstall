@@ -39,6 +39,7 @@ Plugin 'xolox/vim-session'
 Plugin 'rhysd/vim-clang-format'
 "Plugin 'craigemery/vim-autotag'
 Plugin 'CoatiSoftware/vim-sourcetrail'
+Plugin 'rsmenon/vim-mathematica'
 call vundle#end()
 
 "this is a fix for the bug with highlighting in c preprocessor macros (looks to be fixed in a new version)
@@ -210,3 +211,5 @@ set spelllang=en_us
 if v:version > 703 || v:version == 703 && has("patch541")
   set formatoptions+=j " Delete comment character when joining commented lines
 endif
+
+let g:mma_highlight_option = "solarized"
