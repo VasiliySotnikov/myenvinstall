@@ -11,6 +11,7 @@ collect:
 	cp $(VIMDIR)/.vimrc ./.vim/.vimrc
 	cp $(VIMDIR)/filetype.vim ./.vim/filetype.vim || true
 	cp -t ./.vim/ftplugin -- $(VIMDIR)/ftplugin/*.vim
+	cp -r -t ./.vim/ -- $(VIMDIR)/after
 	cp $(HOME)/.bashrc ./.bashrc
 	cp $(HOME)/.gitconfig ./.gitconfig
 	cp $(HOME)/.config/xfce4/terminal/terminalrc ./.config/xfce4/terminal/terminalrc

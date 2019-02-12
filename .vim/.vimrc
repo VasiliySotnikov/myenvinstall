@@ -182,9 +182,6 @@ nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gl :Glog -10 -- %<CR><CR>:copen<CR><C-W>k
 nnoremap <leader>gpu :Gpush<CR>
 
-nnoremap <leader>= :ClangFormat<CR>
-vnoremap == :ClangFormat<CR>
-
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
