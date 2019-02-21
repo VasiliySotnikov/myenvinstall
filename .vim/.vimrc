@@ -210,3 +210,7 @@ if v:version > 703 || v:version == 703 && has("patch541")
 endif
 
 let g:mma_highlight_option = "solarized"
+
+
+" Close all tabls to the right of the current one
+command -nargs=0 TabCloseRight :.+1,$tabdo :q
