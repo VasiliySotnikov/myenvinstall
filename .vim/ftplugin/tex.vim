@@ -5,9 +5,9 @@ let g:Tex_MultipleCompileFormats='pdf'
 let g:Tex_UseMakefile=0
 let g:Tex_GotoError=0
 let g:Tex_ViewRule_pdf = 'okular --unique'
-set shiftwidth=2
-set softtabstop=2
-set iskeyword+=:
+setlocal shiftwidth=2
+setlocal softtabstop=2
+setlocal iskeyword+=:
 
 map <leader>la :w<CR><leader>ll<leader>lv
 "map <leader>fr o\begin{frame}[<++>]<CR>\frametitle{<++>}<CR><++><CR>\end{frame}<CR><++><ESC>`[<C-j>
