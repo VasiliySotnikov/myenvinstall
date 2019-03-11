@@ -111,6 +111,9 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias gtr='git update && git tree'
+git-push-FORCE-REMOTE() {
+    git push --delete origin "$1" && git push --set-upstream origin "$1"
+}
 
 # let less to pick up ANSI color from the pipe
 alias less='less -R'
