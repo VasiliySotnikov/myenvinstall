@@ -33,7 +33,7 @@ Plugin 'grep.vim'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'terryma/vim-expand-region'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'rhysd/vim-clang-format'
@@ -213,4 +213,4 @@ let g:mma_highlight_option = "solarized"
 
 
 " Close all tabls to the right of the current one
-command -nargs=0 TabCloseRight :.+1,$tabdo :q
+command! -nargs=0 TabCloseRight :.+1,$tabdo :tabclose
