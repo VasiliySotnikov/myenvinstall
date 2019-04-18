@@ -219,7 +219,7 @@ set -o vi
 export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig/:$PKG_CONFIG_PATH"
 
 # disable annoying system beeps
-xset -b off &> /dev/null
+xset b off &> /dev/null
 
 # turn off history expension (replacing '!' by something)
 set +H
