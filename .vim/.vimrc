@@ -196,6 +196,8 @@ nnoremap <F4> /<c-r>=expand("<cword>")<CR><CR>N:Grep -r --exclude="tags" --exclu
 nnoremap <leader>ss :Grep -r --exclude="tags" --exclude-dir="build*"<CR>
 "Launch make in pwd and show quickfix window with errors (if any):
 nnoremap <F6> :w<CR>:make <CR>:copen<CR>
+"The will be usefull most of the time
+set makeprg=cd\ ../build;\ ninja\ -j4
 
 set winaltkeys=no
 
