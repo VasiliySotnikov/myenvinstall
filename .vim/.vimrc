@@ -113,6 +113,7 @@ set number
 
 set incsearch
 set hlsearch
+set smartcase
 
 set shiftwidth=4
 set softtabstop=4
