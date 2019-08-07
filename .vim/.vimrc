@@ -24,7 +24,7 @@ call vundle#begin()
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
+"Plugin 'rdnetto/YCM-Generator'
 Plugin 'tpope/vim-surround'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'altercation/vim-colors-solarized'
@@ -41,10 +41,12 @@ Plugin 'CoatiSoftware/vim-sourcetrail'
 Plugin 'VasiliySotnikov/vim-mathematica'
 Plugin 'lervag/vimtex'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'SirVer/ultisnips'
 call vundle#end()
 
 "this is a fix for the bug with highlighting in c preprocessor macros (looks to be fixed in a new version)
 "hi link cCppOut2 PreProc
+
 
 " Options for ycm
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
@@ -177,6 +179,9 @@ endfunction
 map <silent> <F3> :call ToggleShowMarks()<CR>
 nnoremap <leader>m :call ToggleModifiable()<CR>
 
+nnoremap <leader>jj i<CR><ESC>
+
+
 "useful fugitive mappings
 nnoremap <leader>gs :Gstatus<CR><C-W>T:-tabmove<CR>
 nnoremap <leader>ge :Gedit<CR>
@@ -218,3 +223,12 @@ let g:mma_highlight_option = "solarized"
 
 " Close all tabls to the right of the current one
 command! -nargs=0 TabCloseRight :.+1,$tabdo :tabclose
+
+
+" UltiSnips settings
+let g:UltiSnipsExpandTrigger = '<A-q>'
+let g:UltiSnipsJumpForwardTrigger = '<A-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<A-k>'
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+
+inoremap <A-u> <ESC>ui
