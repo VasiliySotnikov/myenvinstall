@@ -1,28 +1,12 @@
-set sw=2
-let g:tex_flavor='pdflatex'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_MultipleCompileFormats='pdf'
-let g:Tex_UseMakefile=0
-let g:Tex_GotoError=0
-let g:Tex_ViewRule_pdf = 'okular --unique'
-setlocal shiftwidth=2
-setlocal softtabstop=2
-setlocal iskeyword+=:
+let g:vimtex_complete_close_braces = 1
+let g:vimtex_fold_enabled = 1
+let g:vimtex_quickfix_open_on_warning = 0
 
-map <leader>la :w<CR><leader>ll<leader>lv
-"map <leader>fr o\begin{frame}[<++>]<CR>\frametitle{<++>}<CR><++><CR>\end{frame}<CR><++><ESC>`[<C-j>
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+let g:vimtex_view_general_options_latexmk = '--unique'
+let g:vimtex_quickfix_autoclose_after_keystrokes = 7
 
-let g:Tex_Env_frame = "\\begin{frame}\<CR>\\frametitle{<++>}\<CR><++>\<CR>\\end{frame}\<CR><++>"
-call IMAP('EFR', g:Tex_Env_frame,'tex')
-
-let g:Tex_Env_block = "\\begin{block}{<++>}\<CR><++>\<CR>\\end{block}\<CR><++>"
-call IMAP('EBL', g:Tex_Env_block,'tex')
-
-let g:Tex_Env_column = "\\begin{column}{<++>\\textwidth}\<CR><++>\<CR>\\end{column}\<CR>"
-call IMAP('ECO', g:Tex_Env_column,'tex')
-
-let g:Tex_Env_column = "\\begin{columns}\<CR>\\begin{column}{<++>\\textwidth}\<CR>\<CR>\\end{column}\<CR>\\begin{column}{<++>\\textwidth}\<CR>\<CR>\\end{column}\<CR>\\end{columns}\<CR>"
-call IMAP('ECS', g:Tex_Env_column,'tex')
-
-let g:Tex_Env_multline = "\\begin{multline}\<CR><++>\<CR>\\end{multline}\<CR><++>"
-call IMAP('EML', g:Tex_Env_multline,'tex')
+let b:surround_{char2nr('e')} = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
+let b:surround_{char2nr('c')} = "\\\1command: \1{\r}"
+let b:surround_{char2nr('"')} = "``\r''"

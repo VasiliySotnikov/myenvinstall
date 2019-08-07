@@ -37,9 +37,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'rhysd/vim-clang-format'
-"Plugin 'craigemery/vim-autotag'
 Plugin 'CoatiSoftware/vim-sourcetrail'
 Plugin 'VasiliySotnikov/vim-mathematica'
+Plugin 'lervag/vimtex'
+Plugin 'ludovicchabant/vim-gutentags'
 call vundle#end()
 
 "this is a fix for the bug with highlighting in c preprocessor macros (looks to be fixed in a new version)
