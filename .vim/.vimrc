@@ -195,6 +195,7 @@ set showmode
 
 nnoremap <leader>w :w<CR>
 inoremap jk <Esc>
+inoremap kj <Esc>
 vnoremap ;; <Esc>
 inoremap {<CR> {<CR>}<c-o>O
 
@@ -231,4 +232,4 @@ let g:UltiSnipsJumpForwardTrigger = '<A-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<A-k>'
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
-inoremap <A-u> <ESC>ui
+inoremap <A-u> <ESC>ua
