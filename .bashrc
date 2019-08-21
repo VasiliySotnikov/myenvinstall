@@ -153,6 +153,7 @@ export PATH="$HOME/local/usr/bin":$PATH
 export PATH="$HOME/.local/bin":$PATH
 export LD_LIBRARY_PATH="$HOME/local/lib":"$HOME/local/lib64":$LD_LIBRARY_PATH 
 export LD_LIBRARY_PATH="$HOME/local/usr/lib":$LD_LIBRARY_PATH 
+export LD_LIBRARY_PATH="$HOME/local/lib/x86_64-linux-gnu/":$LD_LIBRARY_PATH 
 
 export NINJA_STATUS="%r running [%f/%t] elapsed: %e s || "
 
@@ -217,6 +218,8 @@ set -o vi
 
 # set pkgconfig path for local packages
 export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig/:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="$HOME/local/lib/x86_64-linux-gnu/pkgconfig/:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="$HOME/local/share/pkgconfig/:$PKG_CONFIG_PATH"
 
 # disable annoying system beeps
 xset b off &> /dev/null

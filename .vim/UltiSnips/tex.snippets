@@ -99,6 +99,10 @@ snippet desc "Description" b
 \end{description}
 endsnippet
 
+snippet "" "Package" Ai
+\`\`$1'' 
+endsnippet
+
 snippet pac "Package" b
 \usepackage[${1:options}]{${2:package}}$0
 endsnippet
@@ -118,7 +122,7 @@ snippet iff "iff" Ai
 \iff 
 endsnippet
 
-snippet mkm "Math" wA
+snippet ewq "Math" wA
 $${1}$`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
 	snip.rv = ' '
@@ -130,14 +134,14 @@ endsnippet
 snippet dm "Math" wA
 \[
 ${1:${VISUAL}}
-.\]
+\]
 $0
 endsnippet
 
 snippet ali "Align" bA
 \begin{align*}
-	${1:${VISUAL}}
-.\end{align*}
+  ${1:${VISUAL}}
+\end{align*}
 endsnippet
 
 
@@ -323,9 +327,16 @@ snippet ^^ "superscript" iA
 ^{$1}$0
 endsnippet
 
+priority 200
 context "math()"
 snippet rd "(superscript)" iA
 ^{($1)}$0
+endsnippet
+
+priority 400
+context "math()"
+snippet ord "O(.)" iA
+\order{$1} 
 endsnippet
 
 snippet __ "subscript" iA
@@ -350,7 +361,7 @@ snippet EE "exists" iA
 endsnippet
 
 context "math()"
-snippet AA "forall" iA
+snippet forall "forall" iA
 \forall 
 endsnippet
 
@@ -379,6 +390,11 @@ endsnippet
 context "math()"
 snippet mcal "mathcal" iA
 \mathcal{$1}$0
+endsnippet
+
+context "math()"
+snippet vb "bold vector" iA
+\vb*{$1}$0
 endsnippet
 
 context "math()"
@@ -478,7 +494,7 @@ endsnippet
 
 context "math()"
 snippet set "set" wA
-\\{$1\\} $0
+\\{$1\\}
 endsnippet
 
 snippet || "mid" iA
