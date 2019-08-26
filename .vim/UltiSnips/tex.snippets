@@ -224,7 +224,7 @@ endsnippet
 
 context "math()"
 snippet def "equals" iA
-\equiv 
+\coloneqq 
 endsnippet
 
 snippet != "equals" iA
@@ -589,7 +589,13 @@ endsnippet
 priority 10
 context "math()"
 snippet "bar" "bar" riA
-\overline{$1}$0
+\bar{$1}$0
+endsnippet
+
+priority 10
+context "math()"
+snippet "tilde" "tilde" riA
+\tilde{$1}$0
 endsnippet
 
 priority 100
