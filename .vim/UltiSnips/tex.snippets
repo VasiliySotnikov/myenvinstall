@@ -601,7 +601,7 @@ endsnippet
 priority 100
 context "math()"
 snippet "([a-zA-Z])bar" "bar" riA
-\overline{`!p snip.rv=match.group(1)`}
+\bar{`!p snip.rv=match.group(1)`}
 endsnippet
 
 priority 10
@@ -625,10 +625,6 @@ snippet DD "D" iA
 \mathbb{D}
 endsnippet
 
-snippet cref "cref" wA
-\cref{$1} 
-endsnippet
-
 snippet ccite "cite" wA
 \cite{$1} 
 endsnippet
@@ -639,6 +635,15 @@ endsnippet
 
 snippet FEM "emph" wA
 \emph{$1}`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+
+snippet cref "cref" wA
+\cref{$1}`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
     snip.rv = ' '
 else:
