@@ -651,5 +651,28 @@ else:
 `$2
 endsnippet
 
+# Beamer snippets
+
+snippet frame "new beamer frame" bA
+\begin{frame}
+  \frametitle{$1}
+  $0
+\end{frame}
+endsnippet
+
+snippet columns "new columns" bA
+\begin{columns}
+  \begin{column}{$1\textwidth}
+    $0
+  \end{column}
+  \begin{column}{$2\textwidth}
+  \end{column}
+\end{columns}
+endsnippet
+
+snippet igraph "graphics"
+\includegraphics[${1:width=0.95\linewidth}]{$2}
+endsnippet
+
 
 # vim:ft=snippets

@@ -199,6 +199,9 @@ inoremap kj <Esc>
 vnoremap ;; <Esc>
 inoremap {<CR> {<CR>}<c-o>O
 
+imap <F1> <nop>
+inoremap <F1> <Backspace>
+
 "Some grep recipes:
 nnoremap <F4> /<c-r>=expand("<cword>")<CR><CR>N:Grep -r --exclude="tags" --exclude-dir="build*" \<<cword>\> *<CR> <c-w>T
 nnoremap <leader>ss :Grep -r --exclude="tags" --exclude-dir="build*"<CR>
