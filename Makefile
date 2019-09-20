@@ -10,6 +10,7 @@ collect:
 	@echo "Collecting information from the current machine:"
 	cp $(VIMDIR)/.vimrc ./.vim/.vimrc
 	cp $(VIMDIR)/filetype.vim ./.vim/filetype.vim || true
+	cp $(VIMDIR)/spell/en.utf-8.add ./.vim/spell/en.utf-8.add || true
 	cp -t ./.vim/ftplugin -- $(VIMDIR)/ftplugin/*.vim
 	cp -r -t ./.vim/ -- $(VIMDIR)/after
 	cp -r -t ./.vim/ -- $(VIMDIR)/UltiSnips
