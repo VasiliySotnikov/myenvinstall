@@ -55,10 +55,3 @@ distclean:
 diff:
 	make collect
 	git diff
-
-
-#if [[ $(ps -h -o comm -p ($PPID)) == xfce4* ]]; then \
-    cp -r --parents .config/xfce4/terminal/terminalrc $(HOME)/
-#elif [ $(ps -h -o comm -p ($PPID)) == gnome* ]; then \
-    #./gnomesolarized.sh
-#fi
