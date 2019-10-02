@@ -1,7 +1,7 @@
 [credential]
 	helper = cache
 [user]
-	email = vasily.sotnikov@physik.uni-freiburg.de
+	email = sotnikov@mpp.mpg.de
 	name = Vasily Sotnikov
 [diff]
         tool=meld
