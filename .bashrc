@@ -218,6 +218,7 @@ set -o vi
 
 # set pkgconfig path for local packages
 export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig/:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="$HOME/local/lib64/pkgconfig/:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="$HOME/local/lib/x86_64-linux-gnu/pkgconfig/:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="$HOME/local/share/pkgconfig/:$PKG_CONFIG_PATH"
 
