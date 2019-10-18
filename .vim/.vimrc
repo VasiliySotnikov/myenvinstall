@@ -42,6 +42,7 @@ Plugin 'VasiliySotnikov/vim-mathematica'
 Plugin 'lervag/vimtex'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'SirVer/ultisnips'
+Plugin 'shumphrey/fugitive-gitlab.vim'
 call vundle#end()
 
 "this is a fix for the bug with highlighting in c preprocessor macros (looks to be fixed in a new version)
@@ -237,3 +238,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<A-k>'
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 inoremap <A-u> <ESC>ua
+
+
+" Gitlab plugin settings
+let g:gitlab_api_keys = {'gitlab.com': '5KPkdwYUJ_ysChX4_rxL'}
