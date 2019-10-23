@@ -61,8 +61,8 @@ colorscheme solarized
 " Remove and add empty lines
 if has("gui_running")
     set background=light
-    set lines=75
-    set columns=999
+    set lines=59
+    set columns=237
     nnoremap <silent><A-S-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
     nnoremap <silent><A-S-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
     nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
