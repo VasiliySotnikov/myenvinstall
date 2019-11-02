@@ -176,6 +176,11 @@ buildandmaketest(){
     (cd ../; make $2 && make install >/dev/null) && maketest "$1" $2
 }
 
+sshcd(){
+    prevd=${PWD#$HOME}
+    ssh -t "$1" "cd ~$prevd; bash"
+}
+
 
 #******************************************
 # This is to save ssh passphrase
