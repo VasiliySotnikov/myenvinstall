@@ -177,8 +177,11 @@ buildandmaketest(){
 }
 
 sshcd(){
+    # first append the history
+    history -a
+    # save the pathe
     prevd=${PWD#$HOME}
-    ssh -t "$1" "cd ~$prevd; bash"
+    ssh -t "$1" "cd ~$prevd; bash -l"
 }
 
 
