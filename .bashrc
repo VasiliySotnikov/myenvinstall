@@ -235,3 +235,6 @@ xset b off &> /dev/null
 
 # turn off history expension (replacing '!' by something)
 set +H
+
+# path to ferma library
+export FERMATPATH="$HOME/scratch/ferl6/fer64"
