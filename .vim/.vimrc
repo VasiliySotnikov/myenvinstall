@@ -7,9 +7,6 @@ filetype plugin indent on
 syntax on
 syntax enable
 
-" Highlight stuff in *.dat files as in shell script
-autocmd! BufRead,BufNewFile *.dat     setfiletype sh
-
 " Automatically set spell for commit messages
 autocmd! BufRead,BufNewFile COMMIT_EDITMSG setlocal spell
 
@@ -87,13 +84,14 @@ if has("gui_running")
     nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
     nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 else
-    set background=dark
+    set background=light
     nnoremap <silent><J> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
     nnoremap <silent><K> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
     nnoremap <silent>k :set paste<CR>m`O<Esc>``:set nopaste<CR>
     nnoremap <silent>j :set paste<CR>m`o<Esc>``:set nopaste<CR>
 endif
 
+set wildmode=longest,list,full
 set wildmenu
 set showcmd
 
@@ -136,18 +134,12 @@ nnoremap <leader>tt :tab drop<space>
 if has("gui_running")
     nnoremap <silent> <A-Left> :-tabmove<CR>
     nnoremap <silent> <A-Right> :+tabmove<CR>
-    nnoremap <C-tab> :tabn<CR>
-    nnoremap <C-S-tab> :tabp<CR>
-    inoremap <C-tab> <ESC>:tabn<CR>li
-    inoremap <C-S-tab> <ESC>:tabp<CR>li
 else
     nnoremap <silent> [1;3D :-tabmove<CR>
     nnoremap <silent> [1;3C :+tabmove<CR>
-    nnoremap <F7> :tabp<CR>
-    nnoremap <F8> :tabn<CR>
-    inoremap <F7> <ESC>:tabp<CR>li
-    inoremap <F8> <ESC>:tabn<CR>li
 endif
+nnoremap H gT
+nnoremap L gt
 
 "helptags ~/.vim/doc
 
