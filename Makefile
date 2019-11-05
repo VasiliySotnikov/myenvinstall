@@ -17,7 +17,7 @@ collect:
 	cp $(HOME)/.bashrc ./.bashrc
 	cp $(HOME)/.gitconfig ./.gitconfig
 	cp $(HOME)/.config/xfce4/terminal/terminalrc ./.config/xfce4/terminal/terminalrc
-	cp -r $(HOME)/.config/git ./.config/
+	#cp -r $(HOME)/.config/git ./.config/
 	cp $(HOME)/.latexmkrc ./.latexmkrc
 	cp $(HOME)/.tmux.conf ./.tmux.conf
 	cp $(HOME)/.ssh/config ./.ssh/config || true
