@@ -139,6 +139,8 @@ else
 endif
 nnoremap H gT
 nnoremap L gt
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
 
 "helptags ~/.vim/doc
 
