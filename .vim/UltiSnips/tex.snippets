@@ -19,13 +19,16 @@ endglobal
 
 snippet template "Basic template" b
 \documentclass[a4paper]{article}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=1.5cm]{geometry} 
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath, amsfonts, amssymb}
+\usepackage{mathtools}
 \usepackage{physics}
 
 \usepackage{graphicx}
+\usepackage{svg}
 
 \graphicspath{{figures/}}
 
@@ -44,7 +47,13 @@ snippet template "Basic template" b
 \usepackage{easy-todo}
 \usepackage{cleveref}
 
+\title{Title}
+\author{Vasily Sotnikov}
+
 \begin{document}
+
+\maketitle 
+
 $0
 \end{document}
 endsnippet
