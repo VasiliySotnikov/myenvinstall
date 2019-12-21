@@ -180,7 +180,7 @@ nnoremap <leader>jj i<CR><ESC>
 "useful fugitive mappings
 nnoremap <leader>gs :Gstatus<CR><C-W>T:-tabmove<CR>
 nnoremap <leader>ge :Gedit<CR>
-nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gd :Gvdiffsplit<CR>
 nnoremap <leader>gl :Glog -10 -- %<CR><CR>:copen<CR><C-W>k
 nnoremap <leader>gpu :Gpush<CR>
 
