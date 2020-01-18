@@ -233,5 +233,7 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 inoremap <A-u> <ESC>ua
 
 
+nnoremap <leader>tr :NERDTree %<CR>
+
 " Gitlab plugin settings
 let g:gitlab_api_keys = {'gitlab.com': '5KPkdwYUJ_ysChX4_rxL'}
