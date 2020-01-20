@@ -18,9 +18,10 @@ collect:
 	cp $(HOME)/.gitconfig ./.gitconfig
 	cp $(HOME)/.config/xfce4/terminal/terminalrc ./.config/xfce4/terminal/terminalrc
 	#cp -r $(HOME)/.config/git ./.config/
-	cp $(HOME)/.latexmkrc ./.latexmkrc
-	cp $(HOME)/.tmux.conf ./.tmux.conf
+	cp $(HOME)/.latexmkrc ./.latexmkrc || true
+	cp $(HOME)/.tmux.conf ./.tmux.conf || true
 	cp $(HOME)/.ssh/config ./.ssh/config || true
+	cp $(HOME)/.Mathematica/Autoload/init.m ./.Mathematica/Autoload/init.m || true
 
 install: mathematica
 	cp .bashrc $(HOME)/.bashrc
@@ -41,6 +42,8 @@ ctags:
 	./install_ctags.sh
 
 mathematica:
+	mkdir -p $HOME/.Mathematica/Autoload/
+	cp .Mathematica/Autoload/init.m $(HOME)/.Mathematica/Autoload/init.m
 	./MathematicaNotebookSave.sh
 
 setup_tmux:
