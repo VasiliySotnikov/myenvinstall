@@ -20,3 +20,10 @@ With[{
         If[Not[MemberQ[$Path,#]],$Path = Flatten[{$Path, # }]] & /@ fullpaths
     ];
 ];
+
+SetDirectoryFromSelf::usage = "
+    If launched from frontend, set the working directory to the location where the current file is.
+    If launched from script, this is already the case.
+";
+
+SetDirectoryFromSelf[] := If[ $FrontEnd =!= Null, SetDirectory[NotebookDirectory[]], Null ];
