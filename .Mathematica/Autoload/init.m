@@ -12,6 +12,7 @@ With[{
             "scratch/finiteflow/mathlink",
             "scratch/finiteflow-mathtools/packages",
             "scratch/mathematica-utilities",
+            "scratch/Mathematica/symbolic-cpp",
             "scratch/Spinors-1.0",
             Nothing
         }

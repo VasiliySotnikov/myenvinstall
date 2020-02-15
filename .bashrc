@@ -126,6 +126,8 @@ alias op='xdg-open > /dev/null 2>&1'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+alias maths='math -script' 
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -229,6 +231,7 @@ export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig/:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="$HOME/local/lib64/pkgconfig/:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="$HOME/local/lib/x86_64-linux-gnu/pkgconfig/:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="$HOME/local/share/pkgconfig/:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$HOME/local/usr/local/share/pkgconfig"
 
 # disable annoying system beeps
 xset b off &> /dev/null
