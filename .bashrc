@@ -149,8 +149,9 @@ if ! shopt -oq posix; then
 fi
 
 # Link locally built libraries
-export PATH="$HOME/local/bin":$PATH
-export PATH="$HOME/local/usr/bin":$PATH
+export PATH="$HOME/local/bin:$PATH"
+export PATH="$HOME/local/usr/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 # pip bin
 export PATH="$HOME/.local/bin":$PATH
 export LD_LIBRARY_PATH="$HOME/local/lib":"$HOME/local/lib64":$LD_LIBRARY_PATH 

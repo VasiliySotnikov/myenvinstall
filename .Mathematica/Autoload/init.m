@@ -11,8 +11,6 @@ With[{
     homepaths = {
             "scratch/finiteflow/mathlink",
             "scratch/finiteflow-mathtools/packages",
-            "scratch/mathematica-utilities",
-            "scratch/Mathematica/symbolic-cpp",
             "scratch/Spinors-1.0",
             Nothing
         }
@@ -21,6 +19,8 @@ With[{
         If[Not[MemberQ[$Path,#]],$Path = Flatten[{$Path, # }]] & /@ fullpaths
     ];
 ];
+
+$Path = DeleteDuplicates @ Prepend[$Path, FileNameJoin[{$HomeDirectory,"local","Mathematica"}]];
 
 SetDirectoryFromSelf::usage = "
     If launched from frontend, set the working directory to the location where the current file is.
