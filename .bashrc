@@ -128,6 +128,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias maths='math -script' 
 
+alias tmuxns='tmux new-session -s'
+alias tmuxa='tmux a -t'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
