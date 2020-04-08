@@ -14,8 +14,9 @@ collect:
 	cp -t ./.vim/ftplugin -- $(VIMDIR)/ftplugin/*.vim
 	cp -r -t ./.vim/ -- $(VIMDIR)/after
 	cp -r -t ./.vim/ -- $(VIMDIR)/UltiSnips
-	cp $(HOME)/.bashrc ./.bashrc
-	cp $(HOME)/.gitconfig ./.gitconfig
+	cp $(HOME)/.bashrc ./.bashrc || true
+	cp $(HOME)/.profile ./.profile || true
+	cp $(HOME)/.gitconfig ./.gitconfig || true
 	cp $(HOME)/.config/xfce4/terminal/terminalrc ./.config/xfce4/terminal/terminalrc
 	#cp -r $(HOME)/.config/git ./.config/
 	cp $(HOME)/.latexmkrc ./.latexmkrc || true
@@ -25,6 +26,7 @@ collect:
 
 install: mathematica
 	cp .bashrc $(HOME)/.bashrc
+	cp .profile $(HOME)/.profile
 	cp .latexmkrc $(HOME)/.latexmkrc
 	cp .gitconfig $(HOME)/.gitconfig
 	cp .tmux.conf $(HOME)/.tmux.conf

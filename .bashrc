@@ -128,6 +128,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias maths='math -script' 
 
+alias tmuxns='tmux new-session -s'
+alias tmuxa='tmux a -t'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -149,8 +152,9 @@ if ! shopt -oq posix; then
 fi
 
 # Link locally built libraries
-export PATH="$HOME/local/bin":$PATH
-export PATH="$HOME/local/usr/bin":$PATH
+export PATH="$HOME/local/bin:$PATH"
+export PATH="$HOME/local/usr/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 # pip bin
 export PATH="$HOME/.local/bin":$PATH
 export LD_LIBRARY_PATH="$HOME/local/lib":"$HOME/local/lib64":$LD_LIBRARY_PATH 
