@@ -13,7 +13,7 @@ let g:vimtex_quickfix_autoclose_after_keystrokes = 7
 let g:vimtex_compiler_latexmk = {
             \ 'backend' : 'jobs',
             \ 'background' : 1,
-            \ 'build_dir' : '',
+            \ 'build_dir' : 'build/',
             \ 'callback' : 1,
             \ 'continuous' : 1,
             \ 'executable' : 'latexmk',
