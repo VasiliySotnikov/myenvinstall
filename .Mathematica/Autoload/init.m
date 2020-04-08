@@ -28,3 +28,10 @@ SetDirectoryFromSelf::usage = "
 ";
 
 SetDirectoryFromSelf[] := If[ $FrontEnd =!= Null, SetDirectory[NotebookDirectory[]], Null ];
+
+(* 
+    Load this file in all launched parallel kernels.
+    This is not done by default.
+*)
+Get["Parallel`Developer`"];
+Parallel`Developer`$InitCode = Hold[Get[FileNameJoin[{$UserBaseDirectory,"Kernel","init.m"}]]];
