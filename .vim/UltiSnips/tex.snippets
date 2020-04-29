@@ -18,8 +18,9 @@ def math():
 endglobal
 
 snippet template "Basic template" b
-\documentclass[a4paper]{article}
+\documentclass[a4paper]{scrartcl}
 \usepackage[top=2cm, bottom=2cm, left=2.5cm, right=1.5cm]{geometry} 
+\setlength{\parskip}{1ex}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -59,8 +60,8 @@ $0
 endsnippet
 
 snippet beg "begin{} / end{}" bA
-\\begin{${1:equation}}
-	$2
+\\begin{${1:equation}}$2
+	$3
 \\end{$1}
 $0
 endsnippet
@@ -626,10 +627,12 @@ snippet "([a-zA-Z])hat" "hat" riA
 endsnippet
 
 
+context "math()"
 snippet HH "H" iA
 \mathbb{H}
 endsnippet
 
+context "math()"
 snippet DD "D" iA
 \mathbb{D}
 endsnippet
@@ -644,6 +647,24 @@ endsnippet
 
 snippet FEM "emph" wA
 \emph{$1}`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+
+snippet FAL "alert" wA
+\alert{$1}`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+
+snippet FBF "emph" wA
+\textbf{$1}`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
     snip.rv = ' '
 else:
