@@ -39,6 +39,8 @@ Plugin 'lervag/vimtex'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-obsession'
+
+Plugin 'dhruvasagar/vim-open-url'
 call vundle#end()
 
 "this is a fix for the bug with highlighting in c preprocessor macros (looks to be fixed in a new version)
