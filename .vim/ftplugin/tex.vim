@@ -3,6 +3,9 @@ setlocal softtabstop=2
 
 let g:vimtex_complete_close_braces = 1
 let g:vimtex_fold_enabled = 1
+let g:vimtex_fold_manual = 1
+nnoremap <leader>ff :VimtexRefreshFolds<CR>
+
 let g:vimtex_quickfix_open_on_warning = 0
 
 let g:vimtex_view_general_viewer = 'okular'
