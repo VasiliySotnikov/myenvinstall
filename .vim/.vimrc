@@ -44,9 +44,7 @@ Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-open-url'
 call vundle#end()
 
-"this is a fix for the bug with highlighting in c preprocessor macros (looks to be fixed in a new version)
-"hi link cCppOut2 PreProc
-
+let mapleader="\<Space>"
 
 " Options for ycm
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
@@ -58,7 +56,7 @@ let g:ycm_max_diagnostics_to_display = 100
 
 let g:ycm_filetype_whitelist = { 'cpp': 1 , 'python': 1 }
 
-let mapleader="\<Space>"
+nmap <leader>doc <plug>(YCMHover)
 
 if has("gui_running")
   set guioptions-=m  "remove menu bar
