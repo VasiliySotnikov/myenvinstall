@@ -180,11 +180,14 @@ rsyncpush() {
     read -n 1 -p "continue?" CONT
     if [ "$CONT" = "y" ]; then
         rsync -avz "$@" "$base" "mpp:~/$dir";
+        cd "$OLDPWD"
+        return 0
     else
         echo ""
         echo "cancelled"
+        cd "$OLDPWD"
+        return 1
     fi
-    cd "$OLDPWD"
 }
 
 rsyncfetch() {
@@ -192,14 +195,17 @@ rsyncfetch() {
     cd ..
     dir="${PWD#$HOME}"
     rsync -n -avz "$@" "mpp:~/$dir/$base" ./ 
-    read -n 1 -p "continue?"
+    read -n 1 -p "continue?" CONT
     if [ "$CONT" = "y" ]; then
         rsync -avz "$@" "mpp:~/$dir/$base" ./;
+        cd "$OLDPWD"
+        return 0
     else
         echo ""
         echo "cancelled"
+        cd "$OLDPWD"
+        return 1
     fi
-    cd "$OLDPWD"
 }
 
 
