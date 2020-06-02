@@ -164,30 +164,48 @@ export LD_LIBRARY_PATH="$HOME/local/lib/x86_64-linux-gnu/":$LD_LIBRARY_PATH
 export NINJA_STATUS="%r running [%f/%t] elapsed: %e s || "
 
 
-# ******************************************
-# This is quick build commands for BH
-# ******************************************
-reconfigbh() {
-    cd "$HOME/blackhat/$(pwd | sed "s/.*blackhat\/\([^\/]*\)\/*.*/\1/")"; 
-    autoreconf -fi
-    OPTIONS="$@"
-    (cd build/; ../configure --prefix=$PWD --with-QDpath=$HOME/local/ --enable-public=no --enable-readline=no --enable-BHdebug=yes CXXFLAGS="$OPTIONS" && make -j && make install)
-    cd - >/dev/null
-}
-
-maketest(){
-    touch -c ../../my_programs/"$1".cpp && make ""$1".exe" $2 && (./"$1" 2>&1) | tee ""$1".log"
-}
-buildandmaketest(){
-    (cd ../; make $2 && make install >/dev/null) && maketest "$1" $2
-}
-
 sshcd(){
     # first append the history
     history -a
     # save the pathe
     prevd=${PWD#$HOME}
     ssh -t "$1" "cd ~$prevd; bash -l"
+}
+
+rsyncpush() {
+    base="`basename "$PWD"`"
+    cd ..
+    dir="${PWD#$HOME}"
+    rsync -n -avz "$@" "$base" "mpp:~/$dir"
+    read -n 1 -p "continue?" CONT
+    if [ "$CONT" = "y" ]; then
+        rsync -avz "$@" "$base" "mpp:~/$dir";
+        cd "$OLDPWD"
+        return 0
+    else
+        echo ""
+        echo "cancelled"
+        cd "$OLDPWD"
+        return 1
+    fi
+}
+
+rsyncfetch() {
+    base="`basename "$PWD"`"
+    cd ..
+    dir="${PWD#$HOME}"
+    rsync -n -avz "$@" "mpp:~/$dir/$base" ./ 
+    read -n 1 -p "continue?" CONT
+    if [ "$CONT" = "y" ]; then
+        rsync -avz "$@" "mpp:~/$dir/$base" ./;
+        cd "$OLDPWD"
+        return 0
+    else
+        echo ""
+        echo "cancelled"
+        cd "$OLDPWD"
+        return 1
+    fi
 }
 
 

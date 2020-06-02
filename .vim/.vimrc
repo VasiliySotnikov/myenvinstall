@@ -29,6 +29,7 @@ Plugin 'jacquesbh/vim-showmarks'
 Plugin 'grep.vim'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'shumphrey/fugitive-gitlab.vim'
+Plugin 'rbong/vim-flog'
 "Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'terryma/vim-expand-region'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -39,11 +40,11 @@ Plugin 'lervag/vimtex'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-obsession'
+
+Plugin 'dhruvasagar/vim-open-url'
 call vundle#end()
 
-"this is a fix for the bug with highlighting in c preprocessor macros (looks to be fixed in a new version)
-"hi link cCppOut2 PreProc
-
+let mapleader="\<Space>"
 
 " Options for ycm
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
@@ -55,7 +56,7 @@ let g:ycm_max_diagnostics_to_display = 100
 
 let g:ycm_filetype_whitelist = { 'cpp': 1 , 'python': 1 }
 
-let mapleader="\<Space>"
+nmap <leader>doc <plug>(YCMHover)
 
 if has("gui_running")
   set guioptions-=m  "remove menu bar
@@ -181,10 +182,11 @@ nnoremap <leader>jj i<CR><ESC>
 
 "useful fugitive mappings
 nnoremap <leader>gs :Gstatus<CR><C-W>T:-tabmove<CR>
+nnoremap <leader>gfl :Flog<CR>
 nnoremap <leader>ge :Gedit<CR>
 nnoremap <leader>gd :Gvdiffsplit<CR>
 nnoremap <leader>gl :Glog -10 -- %<CR><CR>:copen<CR><C-W>k
-nnoremap <leader>gpu :Gpush<CR>
+nnoremap <leader>gpu :G push<CR>
 
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
