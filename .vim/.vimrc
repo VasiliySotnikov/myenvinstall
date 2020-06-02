@@ -71,6 +71,8 @@ let g:session_default_to_last=1
 let g:session_persist_font = 0
 let g:session_persist_colors = 0
 
+let g:gutentags_exclude_filetypes = ['mma']
+
 colorscheme solarized
 
 " Remove and add empty lines
