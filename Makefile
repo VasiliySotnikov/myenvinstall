@@ -45,7 +45,7 @@ ctags:
 	./install_ctags.sh
 
 mathematica:
-	mkdir -p $HOME/.Mathematica/Autoload/
+	mkdir -p $(HOME)/.Mathematica/Autoload/
 	cp .Mathematica/Autoload/init.m $(HOME)/.Mathematica/Autoload/init.m
 
 setup_tmux:
