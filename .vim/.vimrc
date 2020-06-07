@@ -20,8 +20,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
-"Plugin 'rdnetto/YCM-Generator'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'tpope/vim-surround'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'altercation/vim-colors-solarized'
@@ -55,8 +54,6 @@ set completeopt-=preview
 let g:ycm_max_diagnostics_to_display = 100
 
 let g:ycm_filetype_whitelist = { 'cpp': 1 , 'python': 1 }
-
-nmap <leader>doc <plug>(YCMHover)
 
 if has("gui_running")
   set guioptions-=m  "remove menu bar
@@ -100,9 +97,13 @@ set showcmd
 set backspace=indent,eol,start
 set autoindent
 
+set nobackup
+set nowritebackup
 set noswapfile
 set undofile " Maintain undo history between sessions
 set undodir=~/tmp
+
+set updatetime=300
 
 set ruler
 set laststatus=2
@@ -115,6 +116,14 @@ set visualbell
 
 set cmdheight=2
 set number
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+end
 
 set incsearch
 set hlsearch
@@ -144,8 +153,6 @@ nnoremap H gT
 nnoremap L gt
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
-
-"helptags ~/.vim/doc
 
 
 function! ToggleModifiable()
@@ -241,3 +248,7 @@ nnoremap <leader>tr :NERDTree %<CR>
 
 " Gitlab plugin settings
 let g:gitlab_api_keys = {'gitlab.com': '5KPkdwYUJ_ysChX4_rxL'}
+
+
+" Read in coc setup
+source ~/.vim/coc-setup.vim
