@@ -21,6 +21,7 @@ call vundle#begin()
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'jackguo380/vim-lsp-cxx-highlight'
 Plugin 'tpope/vim-surround'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'altercation/vim-colors-solarized'
