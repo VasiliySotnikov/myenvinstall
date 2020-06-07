@@ -7,4 +7,4 @@ git clone https://github.com/textext/textext.git || true
 cd textext
 git pull
 
-python2 setup.py
+python3 setup.py
