@@ -46,7 +46,6 @@ ctags:
 mathematica:
 	mkdir -p $HOME/.Mathematica/Autoload/
 	cp .Mathematica/Autoload/init.m $(HOME)/.Mathematica/Autoload/init.m
-	./MathematicaNotebookSave.sh
 
 setup_tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
