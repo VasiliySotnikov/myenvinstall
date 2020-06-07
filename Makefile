@@ -5,7 +5,6 @@ BACKUPDIR=$(HOME)/.vim_old
 
 all:  install vimconfig ctags mathematica setup_tmux
 
-
 collect:
 	@echo "Collecting information from the current machine:"
 	cp $(VIMDIR)/.vimrc ./.vim/
@@ -25,26 +24,27 @@ collect:
 	cp $(HOME)/.ssh/config ./.ssh/config || true
 	cp $(HOME)/.Mathematica/Autoload/init.m ./.Mathematica/Autoload/init.m || true
 
-install: mathematica
+install:
 	cp .bashrc $(HOME)/.bashrc
 	cp .profile $(HOME)/.profile
 	cp .latexmkrc $(HOME)/.latexmkrc
 	cp .gitconfig $(HOME)/.gitconfig
 	cp .tmux.conf $(HOME)/.tmux.conf
 	cp -r --parents .vim $(HOME)/
+	./replace_home.py -f $(VIMDIR)/coc-settings.json
 	cp -r --parents .dircolors $(HOME)/
 	cp -r --parents .config/ $(HOME)/
 	ln -sf $(VIMDIR)/.vimrc $(HOME)/.vimrc
 	cp ./.ssh/config $(HOME)/.ssh/config || true
 
-vimconfig:
+vimconfig: install
 	@echo "Installing vim plugins:"
 	-cd $(VIMDIR)/vimconfig/ && ./vimconfig.sh
 
-ctags:
+ctags: install 
 	./install_ctags.sh
 
-mathematica:
+mathematica: install
 	mkdir -p $(HOME)/.Mathematica/Autoload/
 	cp .Mathematica/Autoload/init.m $(HOME)/.Mathematica/Autoload/init.m
 

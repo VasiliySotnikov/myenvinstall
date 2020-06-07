@@ -8,5 +8,5 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 2
 vim +PluginInstall
 
 vim +":call coc#util#install()"
-vim +"CocInstall coc-cmake coc-python coc-clangd coc-json coc-rls coc-lsp-wl"
+vim +"CocInstall coc-cmake coc-python coc-clangd coc-json coc-rls coc-lsp-wl coc-vimtex"
 vim -c "CocCommand clangd.install" t.cpp
