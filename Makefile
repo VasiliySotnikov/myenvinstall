@@ -3,7 +3,7 @@ VIMDIR=$(HOME)/.vim
 BACKUPDIR=$(HOME)/.vim_old
 
 
-all:  install vimconfig ctags mathematica
+all:  install vimconfig ctags mathematica setup_tmux
 
 
 collect:
@@ -48,8 +48,7 @@ mathematica:
 	cp .Mathematica/Autoload/init.m $(HOME)/.Mathematica/Autoload/init.m
 
 setup_tmux:
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm 2>/dev/null || (cd ~/.tmux/plugins/tpm ; git pull)
 
 distclean: 
 	rm -rf $(BACKUPDIR)
