@@ -46,29 +46,10 @@ call vundle#end()
 
 let mapleader="\<Space>"
 
-" Options for ycm
-"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-"let g:ycm_extra_conf_globlist = ['~/*']
-let g:ycm_complete_in_comments=1
-set completeopt-=preview
-"let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_max_diagnostics_to_display = 100
-
-let g:ycm_filetype_whitelist = { 'cpp': 1 , 'python': 1 }
-
 if has("gui_running")
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
 endif
-
-" vim-session settings
-let g:session_autoload='no'
-let g:session_autosave='yes'
-let g:session_autosave_periodic=5
-let g:session_autosave_silent=1
-let g:session_default_to_last=1
-let g:session_persist_font = 0
-let g:session_persist_colors = 0
 
 let g:gutentags_exclude_filetypes = ['mma']
 
@@ -128,6 +109,7 @@ end
 
 set incsearch
 set hlsearch
+set ignorecase
 set smartcase
 
 set shiftwidth=4
@@ -139,7 +121,7 @@ set showmatch
 
 set scrolloff=5
 
-set foldcolumn=1
+set foldcolumn=2
 
 " Tab navigation:
 nnoremap <leader>tt :tab drop<space>
@@ -225,9 +207,8 @@ set sessionoptions+=tabpages,globals
 
 set spelllang=en_us
 
-if v:version > 703 || v:version == 703 && has("patch541")
-  set formatoptions+=j " Delete comment character when joining commented lines
-endif
+" Delete comment character when joining commented lines
+set formatoptions+=j 
 
 let g:mma_highlight_option = "solarized"
 
