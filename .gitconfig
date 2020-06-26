@@ -36,3 +36,5 @@
 	displayuntracked = false
 [rebase]
         autosquash = true
+[pull]
+        ff = only
