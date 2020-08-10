@@ -31,6 +31,10 @@ snippet template "Basic template" b
 \usepackage{graphicx}
 \usepackage{svg}
 
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{L}{>{$}l<{$}}
+
 \graphicspath{{figures/}}
 
 \usepackage[%
@@ -641,8 +645,12 @@ snippet ccite "cite" wA
 \cite{$1} 
 endsnippet
 
-snippet todo "todo" wA
+snippet ttodo "todo" wA
 \todo{$1} 
+endsnippet
+
+snippet verbb "verb" wA
+\verb|$1| $0
 endsnippet
 
 snippet FEM "emph" wA
@@ -663,7 +671,7 @@ else:
 `$2
 endsnippet
 
-snippet FBF "emph" wA
+snippet FBF "textbf" wA
 \textbf{$1}`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
     snip.rv = ' '
@@ -672,7 +680,25 @@ else:
 `$2
 endsnippet
 
-snippet cref "cref" wA
+snippet FIT "textit" wA
+\textit{$1}`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+
+snippet FTT "texttt" wA
+\texttt{$1}`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+
+snippet ccref "cref" wA
 \cref{$1}`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
     snip.rv = ' '
