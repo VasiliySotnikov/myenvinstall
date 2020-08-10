@@ -35,8 +35,8 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'CoatiSoftware/vim-sourcetrail'
-"Plugin 'VasiliySotnikov/vim-mathematica'
-Plugin 'voldikss/vim-mma'
+Plugin 'VasiliySotnikov/vim-mathematica'
+"Plugin 'voldikss/vim-mma'
 Plugin 'lervag/vimtex'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'SirVer/ultisnips'
@@ -53,6 +53,8 @@ if has("gui_running")
 endif
 
 let g:gutentags_exclude_filetypes = ['mma']
+
+let g:tex_flavor = "latex"
 
 colorscheme solarized
 
