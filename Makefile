@@ -11,6 +11,7 @@ collect:
 	cp $(VIMDIR)/filetype.vim ./.vim/ || true
 	cp $(VIMDIR)/spell/en.utf-8.add ./.vim/spell/ || true
 	cp $(VIMDIR)/coc-settings.json ./.vim/ || true
+	cp $(VIMDIR)/coc-setup.vim ./.vim/ || true
 	cp -t ./.vim/ftplugin -- $(VIMDIR)/ftplugin/*.vim
 	cp -r -t ./.vim/ -- $(VIMDIR)/after
 	cp -r -t ./.vim/ -- $(VIMDIR)/UltiSnips
