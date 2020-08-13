@@ -1,5 +1,6 @@
 global !p
-texMathZones = ['texMathZone'+x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z']]
+texMathZones = ['texMathZone'+x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsAS', 'AmsB', 'AmsBS', 'AmsC', 'AmsCS', 'AmsD', 'AmsDS', 'AmsE', 'AmsES', 'AmsF', 'AmsFS', 'AmsG', 'AmsGS', 'AmsH', 'AmsHS', 'AmsI', 'AmsIS', 'AmsJ', 'AmsJS', 'AmsK', 'AmsKS', 'AmsL', 'AmsLS', 'AmsDS', 'AmsV', 'AmsW', 'AmsX', 'AmsY', 'AmsZ'
+]]
 
 texIgnoreMathZones = ['texMathText']
 
@@ -78,11 +79,11 @@ endsnippet
 snippet table "Table environment" b
 \begin{table}[${1:htpb}]
 	\centering
-	\caption{${2:caption}}
-	\label{tab:${3:label}}
 	\begin{tabular}{${5:c}}
 	$0${5/((?<=.)c|l|r)|./(?1: & )/g}
 	\end{tabular}
+	\caption{${2:caption}}
+	\label{tab:${3:label}}
 \end{table}
 endsnippet
 
