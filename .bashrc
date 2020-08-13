@@ -10,35 +10,46 @@ case $- in
       *) return;;
 esac
 
-#HISTCONTROL=ignoreboth
 
+# edit a recalled history line before executing
+shopt -s histverify
+# reedit a history substitution line if it failed
+#shopt -s histreedit
 # append to the history file, don't overwrite it
-#shopt -s histappend
+shopt -s histappend
+
+# Synchronization of histories of multiple terminals
+# https://unix.stackexchange.com/a/359217
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
+HISTSIZE=100000
 HISTFILESIZE=$HISTSIZE
 # don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignorespace:ignoredups
 
-## reedit a history substitution line if it failed
-shopt -s histreedit
-## edit a recalled history line before executing
-shopt -s histverify
 
 _bash_history_sync() {
     builtin history -a         #1
     HISTFILESIZE=$HISTSIZE     #2
-    #builtin history -c         #3
-    #builtin history -r         #4
+}
+
+_bash_history_sync_and_reload() {
+    builtin history -a         #1
+    HISTFILESIZE=$HISTSIZE     #2
+    builtin history -c         #3
+    builtin history -r         #4
 }
 
 history() {                  #5
-    _bash_history_sync
+    _bash_history_sync_and_reload
     builtin history "$@"
 }
 
-PROMPT_COMMAND="_bash_history_sync; $PROMPT_COMMAND"
+export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S   "
+PROMPT_COMMAND="history 1 >> ${HOME}/.bash_eternal_history"
+PROMPT_COMMAND="_bash_history_sync;$PROMPT_COMMAND"
+
+#############
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
