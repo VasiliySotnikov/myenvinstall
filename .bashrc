@@ -36,8 +36,8 @@ _bash_history_sync() {
 _bash_history_sync_and_reload() {
     builtin history -a         #1
     HISTFILESIZE=$HISTSIZE     #2
-    builtin history -c         #3
-    builtin history -r         #4
+    #builtin history -c         #3
+    #builtin history -r         #4
 }
 
 history() {                  #5
