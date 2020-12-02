@@ -1,6 +1,8 @@
 global !p
-texMathZones = ['texMathZone'+x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsAS', 'AmsB', 'AmsBS', 'AmsC', 'AmsCS', 'AmsD', 'AmsDS', 'AmsE', 'AmsES', 'AmsF', 'AmsFS', 'AmsG', 'AmsGS', 'AmsH', 'AmsHS', 'AmsI', 'AmsIS', 'AmsJ', 'AmsJS', 'AmsK', 'AmsKS', 'AmsL', 'AmsLS', 'AmsDS', 'AmsV', 'AmsW', 'AmsX', 'AmsY', 'AmsZ'
-]]
+#texMathZones = ['texMathZone'+x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsAS', 'AmsB', 'AmsBS', 'AmsC', 'AmsCS', 'AmsD', 'AmsDS', 'AmsE', 'AmsES', 'AmsF', 'AmsFS', 'AmsG', 'AmsGS', 'AmsH', 'AmsHS', 'AmsI', 'AmsIS', 'AmsJ', 'AmsJS', 'AmsK', 'AmsKS', 'AmsL', 'AmsLS', 'AmsDS', 'AmsV', 'AmsW', 'AmsX', 'AmsY', 'AmsZ'
+#]]
+
+texMathZones = ['texMathRegionEnv', 'texMathRegionX']
 
 texIgnoreMathZones = ['texMathText']
 
@@ -735,6 +737,12 @@ snippet block "new columns"
 \begin{block}{$1}
   $0
 \end{block}
+endsnippet
+
+snippet mdframed "mdframed"
+\begin{mdframed}[frametitle=${1:""}]
+  $0
+\end{mdframed}
 endsnippet
 
 # vim:ft=snippets
