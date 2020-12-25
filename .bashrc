@@ -132,6 +132,7 @@ alias less='less -R'
 
 # quickly open with the default program
 alias op='xdg-open > /dev/null 2>&1'
+complete -F _longopt op
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
