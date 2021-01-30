@@ -2,9 +2,9 @@ global !p
 #texMathZones = ['texMathZone'+x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsAS', 'AmsB', 'AmsBS', 'AmsC', 'AmsCS', 'AmsD', 'AmsDS', 'AmsE', 'AmsES', 'AmsF', 'AmsFS', 'AmsG', 'AmsGS', 'AmsH', 'AmsHS', 'AmsI', 'AmsIS', 'AmsJ', 'AmsJS', 'AmsK', 'AmsKS', 'AmsL', 'AmsLS', 'AmsDS', 'AmsV', 'AmsW', 'AmsX', 'AmsY', 'AmsZ'
 #]]
 
-texMathZones = ['texMathRegionEnv', 'texMathRegionX']
+texMathZones = ['texMathZoneEnv', 'texMathZoneX']
 
-texIgnoreMathZones = ['texMathText']
+texIgnoreMathZones = ['texMathTextArg']
 
 texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
 texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
