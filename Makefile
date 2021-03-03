@@ -60,3 +60,9 @@ distclean:
 diff:
 	make collect
 	git diff
+
+cargo:
+	cargo install ripgrep
+	cargo install fd-find
+	cargo install sd
+	cargo install --locked bat

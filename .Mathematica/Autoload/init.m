@@ -7,6 +7,9 @@ If[Not[MemberQ[$Path,$SpinorsPath]],$Path = Flatten[{$Path, $SpinorsPath }]];
 $FiniteFlowPath = FileNameJoin[{$HomeDirectory,"scratch/finiteflow/mathlink"}];
 If[Not[MemberQ[$Path,$FiniteFlowPath]],$Path = Flatten[{$Path, $FiniteFlowPath }]];
 
+($LibraryPath = Flatten[{FileNameJoin[{$HomeDirectory,"local", #}],$LibraryPath}]) & /@ {"lib", "lib64"};
+
+
 With[{
     homepaths = {
             "scratch/finiteflow/mathlink",
