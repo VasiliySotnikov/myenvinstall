@@ -37,6 +37,7 @@ install:
 	cp -r --parents .config/ $(HOME)/
 	ln -sf $(VIMDIR)/.vimrc $(HOME)/.vimrc
 	cp ./.ssh/config $(HOME)/.ssh/config || true
+	ln -sf ./inkscape_beamer/inkscape_beamer.py $(HOME)/local/bin/inkscape_beamer.py
 
 vimconfig: install
 	@echo "Installing vim plugins:"
